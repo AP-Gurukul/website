@@ -110,10 +110,10 @@
 
 /* --- APP INTERNAL UI --- */
 .appContent {
-  padding: 16px;
   flex: 1;
-  overflow-y: auto;
-  scrollbar-width: none;
+  padding: 16px;
+  overflow: hidden;
+  pointer-events: none; /* Prevents users from getting stuck scrolling inside the phone */
 }
 .appContent::-webkit-scrollbar {
   display: none;

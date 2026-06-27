@@ -14,6 +14,7 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
+import Refund from './pages/Refund';
 import './index.css'; // Ensure global styles are imported
 
 function App() {
@@ -40,6 +41,16 @@ function App() {
       <>
         <Navbar />
         <Privacy />
+        <Footer />
+      </>
+    );
+  }
+
+  if (path === '/refund' || path === '/refund.html') {
+    return (
+      <>
+        <Navbar />
+        <Refund />
         <Footer />
       </>
     );
