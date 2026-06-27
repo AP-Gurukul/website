@@ -380,11 +380,6 @@ const screens = [
 ];
 
 const AppShowcase: React.FC = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  // Removed Javascript scroll-jacking completely to ensure native scrolling works flawlessly.
-  // Users will scroll horizontally via native trackpad swipe or shift+scroll.
-
   return (
     <section className={styles.showcase} id="app-showcase">
       <div className={styles.head}>
@@ -395,21 +390,44 @@ const AppShowcase: React.FC = () => {
         </p>
       </div>
 
-      <div className={styles.scrollContainer} ref={scrollRef}>
-        {screens.map((screen) => (
-          <div key={screen.id} className={styles.phoneWrapper}>
-            <div className={styles.phoneFrame}>
-              <div className={styles.screen}>
-                <StatusBar />
-                {screen.component}
+      <div className={styles.scrollWrapper}>
+        <div className={styles.scrollTrack}>
+          {/* First Group */}
+          <div className={styles.scrollGroup}>
+            {screens.map((screen) => (
+              <div key={`g1-${screen.id}`} className={styles.phoneWrapper}>
+                <div className={styles.phoneFrame}>
+                  <div className={styles.screen}>
+                    <StatusBar />
+                    {screen.component}
+                  </div>
+                </div>
+                <div className={styles.caption}>
+                  <h3>{screen.title}</h3>
+                  <p>{screen.desc}</p>
+                </div>
               </div>
-            </div>
-            <div className={styles.caption}>
-              <h3>{screen.title}</h3>
-              <p>{screen.desc}</p>
-            </div>
+            ))}
           </div>
-        ))}
+          
+          {/* Second Duplicate Group for Seamless Looping */}
+          <div className={styles.scrollGroup}>
+            {screens.map((screen) => (
+              <div key={`g2-${screen.id}`} className={styles.phoneWrapper}>
+                <div className={styles.phoneFrame}>
+                  <div className={styles.screen}>
+                    <StatusBar />
+                    {screen.component}
+                  </div>
+                </div>
+                <div className={styles.caption}>
+                  <h3>{screen.title}</h3>
+                  <p>{screen.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

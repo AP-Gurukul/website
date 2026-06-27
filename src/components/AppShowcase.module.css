@@ -25,23 +25,51 @@
   line-height: 1.6;
 }
 
-.scrollContainer {
+.scrollWrapper {
+  overflow: hidden;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+/* Subtle fade on edges for ultra-premium look */
+.scrollWrapper::before,
+.scrollWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 15vw;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+.scrollWrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg) 0%, transparent 100%);
+}
+.scrollWrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg) 0%, transparent 100%);
+}
+
+.scrollTrack {
+  display: flex;
+  width: max-content;
+  animation: showcaseMarquee 40s linear infinite;
+}
+
+.scrollTrack:hover {
+  animation-play-state: paused;
+}
+
+.scrollGroup {
   display: flex;
   gap: 40px;
-  padding: 0 4vw 80px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  cursor: grab;
+  padding-right: 40px; /* Equal to gap to maintain spacing between groups */
 }
 
-.scrollContainer:active {
-  cursor: grabbing;
-}
-
-.scrollContainer::-webkit-scrollbar {
-  display: none;
+@keyframes showcaseMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .phoneWrapper {
