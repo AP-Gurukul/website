@@ -23,7 +23,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
-  align-items: center;
+  align-items: flex-start;
+  min-height: 640px;
+  padding-top: 32px;
   position: relative;
   z-index: 1;
 }
@@ -273,6 +275,8 @@
   .grid {
     grid-template-columns: 1fr;
     gap: 48px;
+    min-height: auto;
+    padding-top: 0;
   }
   .preview::after {
     display: none;
