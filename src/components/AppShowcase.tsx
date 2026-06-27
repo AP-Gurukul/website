@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import styles from './AppShowcase.module.css';
-import { Crown, LayoutGrid, Check, ChevronLeft, TrendingDown, AlertCircle, Clock, CheckSquare, Target, Lightbulb, Users, Battery, Wifi, Signal } from 'lucide-react';
+import { Crown, LayoutGrid, Check, ChevronLeft, ChevronRight, ChevronDown, TrendingDown, AlertCircle, Clock, CheckSquare, Target, Lightbulb, Users, Battery, Wifi, Signal } from 'lucide-react';
 
 const StatusBar = () => (
   <div className={styles.statusBar}>
@@ -270,6 +270,82 @@ const ScreenAI = () => (
 );
 
 
+const ScreenSyllabus = () => (
+  <div className={styles.appContent} style={{ padding: 0, background: '#f8f7f4' }}>
+    <div className={styles.sylHeader}>
+      <div className={styles.sylIconWrap}>
+        <ChevronLeft size={20} strokeWidth={3} color="#111" />
+      </div>
+      <div>
+        <div className={styles.sylTitle}>Syllabus Tracker</div>
+        <div className={styles.sylSubTitle}>Check off topics as you learn</div>
+      </div>
+    </div>
+
+    <div>
+      <div className={styles.sylCard}>
+        <div className={styles.sylRowTitle}><ChevronDown size={16} color="#888" /> Indian Polity & Governance</div>
+        <div className={styles.sylRight}>
+          0% <div className={styles.sylBar}><div className={styles.miniBarFill} style={{ width: '0%', background: '#4f46e5' }} /></div>
+        </div>
+      </div>
+      
+      <div className={styles.sylSubCard}>
+        <div className={styles.sylSubCardTitle}><ChevronDown size={14} color="#888" /> Constitutional Framework & Core Principles</div>
+        <div className={styles.sylRight}>
+          1% <div className={styles.sylBar}><div className={styles.miniBarFill} style={{ width: '1%', background: '#4f46e5' }} /></div>
+        </div>
+      </div>
+
+      <div className={styles.sylSubCard} style={{ paddingLeft: 64, background: '#f4f3f0' }}>
+        <div className={styles.sylSubCardTitle}><ChevronDown size={14} color="#888" /> Historical Background</div>
+        <div className={styles.sylRight}>
+          11% <div className={styles.sylBar}><div className={styles.miniBarFill} style={{ width: '11%', background: '#4f46e5' }} /></div>
+        </div>
+      </div>
+
+      <div className={styles.sylSubCard} style={{ paddingLeft: 84, background: '#efeeeb' }}>
+        <div className={styles.sylSubCardTitle}><ChevronRight size={14} color="#888" /> Historical Background (Company Rule & Crown Rule)</div>
+        <div className={styles.sylRight}>
+          0% <div className={styles.sylBar}><div className={styles.miniBarFill} style={{ width: '0%', background: '#4f46e5' }} /></div>
+        </div>
+      </div>
+
+      <div className={styles.sylSubCard} style={{ paddingLeft: 84, background: '#efeeeb' }}>
+        <div className={styles.sylSubCardTitle}><ChevronDown size={14} color="#888" /> Features & Governance Models</div>
+        <div className={styles.sylRight}>
+          25% <div className={styles.sylBar}><div className={styles.miniBarFill} style={{ width: '25%', background: '#4f46e5' }} /></div>
+        </div>
+      </div>
+      
+      <div className={styles.sylItem} style={{ paddingLeft: 104 }}>
+        <div className={`${styles.check} ${styles.active}`}><Check size={14} strokeWidth={4} /></div>
+        <div className={`${styles.sylItemText} ${styles.done}`}>Unitary Features vs. Federal Features within the Constitutional Matrix</div>
+      </div>
+      <div className={styles.sylItem} style={{ paddingLeft: 104 }}>
+        <div className={styles.check}></div>
+        <div className={styles.sylItemText}>Parliamentary Form of Government</div>
+      </div>
+      <div className={styles.sylItem} style={{ paddingLeft: 104 }}>
+        <div className={styles.check}></div>
+        <div className={styles.sylItemText}>Presidential Form of Government</div>
+      </div>
+      <div className={styles.sylItem} style={{ paddingLeft: 104 }}>
+        <div className={styles.check}></div>
+        <div className={styles.sylItemText}>Comparative Analysis: Parliamentary vs. Presidential Systems</div>
+      </div>
+
+      <div className={styles.sylSubCard} style={{ paddingLeft: 64, background: '#f4f3f0' }}>
+        <div className={styles.sylSubCardTitle}><ChevronRight size={14} color="#888" /> Making of the Constitution</div>
+        <div className={styles.sylRight}>
+          0% <div className={styles.sylBar}><div className={styles.miniBarFill} style={{ width: '0%', background: '#4f46e5' }} /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+
 const screens = [
   {
     id: 1,
@@ -294,14 +370,41 @@ const screens = [
     title: 'AI Insights',
     desc: 'Get personalized feedback on what to focus on to improve.',
     component: <ScreenAI />
+  },
+  {
+    id: 5,
+    title: 'Syllabus Tracker',
+    desc: 'Check off topics as you learn and track completion visually.',
+    component: <ScreenSyllabus />
   }
 ];
 
 const AppShowcase: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Removed aggressive scroll-jacking that was breaking vertical page scroll
-  // Users can now natively scroll horizontally using trackpad, touch, or shift+scroll
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      // If primarily scrolling vertically with a mouse wheel
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        // Check if we are at the very edges of the scroll container
+        const isAtLeft = el.scrollLeft <= 0 && e.deltaY < 0;
+        const isAtRight = Math.ceil(el.scrollLeft) >= (el.scrollWidth - el.clientWidth) && e.deltaY > 0;
+        
+        // Only hijack the vertical scroll to move horizontally IF there is still room to scroll horizontally.
+        // Once we hit the edge, we let the default vertical page scroll happen!
+        if (!isAtLeft && !isAtRight) {
+          e.preventDefault();
+          el.scrollLeft += e.deltaY;
+        }
+      }
+    };
+
+    el.addEventListener('wheel', handleWheel, { passive: false });
+    return () => el.removeEventListener('wheel', handleWheel);
+  }, []);
 
   return (
     <section className={styles.showcase} id="app-showcase">
