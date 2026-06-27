@@ -1,10 +1,11 @@
 .preview {
-  background: var(--bg);
+  background: var(--ink); /* Dark UI from Outcomes */
   position: relative;
   overflow: hidden;
+  color: #fff;
 }
 
-/* Add premium background glow behind the card */
+/* Subtle premium glow behind the card, using a dim green */
 .preview::after {
   content: '';
   position: absolute;
@@ -12,7 +13,7 @@
   right: 5%;
   width: 40vw;
   height: 40vw;
-  background: radial-gradient(circle, rgba(29, 158, 117, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(29, 158, 117, 0.08) 0%, transparent 70%);
   border-radius: 50%;
   transform: translateY(-50%);
   z-index: 0;
@@ -21,7 +22,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.1fr;
   gap: 64px;
   align-items: center;
   position: relative;
@@ -30,11 +31,12 @@
 
 .text h2 {
   margin-top: 12px;
+  color: #fff;
 }
 
 .text p {
   font-size: 16px;
-  color: var(--ink2);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.7;
   margin: 24px 0 40px;
   max-width: 480px;
@@ -44,33 +46,28 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--ink);
-  color: #fff;
+  background: #fff;
+  color: var(--ink);
   border-radius: 8px;
   padding: 14px 28px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.2s ease;
-  box-shadow: 0 8px 24px rgba(14, 14, 12, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .btnPrimary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(14, 14, 12, 0.2);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
 }
 
 .card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+  background: #141414; /* Deep premium black card */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.card:hover {
-  transform: scale(1.02) translateY(-4px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
 }
 
 .meta {
@@ -83,19 +80,19 @@
 .pill {
   font-size: 11px;
   font-weight: 500;
-  color: var(--ink2);
+  color: rgba(255, 255, 255, 0.6);
   padding: 4px 12px;
   border-radius: 100px;
-  background: var(--surface2);
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .questionText {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
-  color: var(--ink);
-  line-height: 1.7;
-  margin-bottom: 24px;
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 32px;
 }
 
 .options {
@@ -110,48 +107,49 @@
   gap: 16px;
   padding: 14px 20px;
   border-radius: 12px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.2s ease;
   cursor: pointer;
-  background: var(--surface);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .hovered {
-  border-color: var(--ink3);
+  border-color: rgba(255, 255, 255, 0.3);
   transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .hovered .optionText {
-  color: var(--ink);
+  color: #fff;
 }
 
 .letter {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  background: var(--surface2);
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 11px;
   font-weight: 600;
-  color: var(--ink2);
+  color: rgba(255, 255, 255, 0.7);
   flex-shrink: 0;
   transition: all 0.2s ease;
 }
 
 .optionText {
   font-size: 14px;
-  color: var(--ink2);
+  color: rgba(255, 255, 255, 0.8);
   transition: color 0.2s ease;
 }
 
 /* Correct state */
 .correct {
-  background: var(--green-bg);
+  background: rgba(29, 158, 117, 0.1); /* var(--green) with opacity */
   border-color: var(--green);
-  box-shadow: 0 4px 12px rgba(29, 158, 117, 0.1);
+  box-shadow: 0 4px 12px rgba(29, 158, 117, 0.15);
   cursor: default;
 }
 
@@ -162,13 +160,13 @@
 }
 
 .correct .optionText {
-  color: var(--green);
+  color: #fff;
   font-weight: 600;
 }
 
 /* Incorrect state */
 .incorrect {
-  background: #FDF1F1;
+  background: rgba(224, 49, 49, 0.1); /* Red with opacity */
   border-color: #E03131;
   cursor: default;
   animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
@@ -181,13 +179,13 @@
 }
 
 .incorrect .optionText {
-  color: #E03131;
+  color: #fff;
   font-weight: 600;
 }
 
 /* Dimmed state for other unselected options */
 .dimmed {
-  opacity: 0.5;
+  opacity: 0.3;
   cursor: default;
 }
 
@@ -198,18 +196,43 @@
   40%, 60% { transform: translate3d(4px, 0, 0); }
 }
 
+/* Explanation Box (matches app screenshot) */
+.explanation {
+  margin-top: 24px;
+  background: rgba(29, 158, 117, 0.06);
+  border: 1px solid rgba(29, 158, 117, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.explHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.explanation p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
 .bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--line);
-  margin-top: 24px;
-  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 28px;
+  padding-top: 24px;
 }
 
 .counter {
   font-size: 13px;
-  color: var(--ink3);
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 500;
 }
 
@@ -219,11 +242,29 @@
   gap: 6px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--ink);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .timerIcon {
-  color: var(--ink2);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.btnNext {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btnNext:hover {
+  background: #144f8a;
+  transform: translateX(4px);
 }
 
 @media (max-width: 900px) {
@@ -233,5 +274,8 @@
   }
   .preview::after {
     display: none;
+  }
+  .card {
+    padding: 24px;
   }
 }

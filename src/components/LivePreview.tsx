@@ -1,23 +1,93 @@
 import React, { useState } from 'react';
 import styles from './LivePreview.module.css';
-import { ArrowRight, Clock } from 'lucide-react';
+import { ArrowRight, Clock, Info, Check } from 'lucide-react';
 
-const quizOptions = [
-  "Krishna Deva Raya, Andhra Pradesh",
-  "Bukka Raya I, Tamil Nadu",
-  "Harihara I & Bukka I, Karnataka",
-  "Deva Raya II, Maharashtra"
+const quizQuestions = [
+  {
+    meta: ['AP History', 'Group 1 — 2022', 'Medium'],
+    text: "Who founded the Vijayanagara Empire in 1336 CE, and in which present-day state is Hampi located?",
+    options: [
+      "Krishna Deva Raya, Andhra Pradesh",
+      "Bukka Raya I, Tamil Nadu",
+      "Harihara I & Bukka I, Karnataka",
+      "Deva Raya II, Maharashtra"
+    ],
+    correctIndex: 2,
+    explanation: "The Vijayanagara Empire was established in 1336 by brothers Harihara I and Bukka Raya I of the Sangama dynasty. Its ruins are located in Hampi, Karnataka, which is a UNESCO World Heritage site."
+  },
+  {
+    meta: ['Indian Polity', 'Group 2 — 2019', 'Hard'],
+    text: "Which of the following Articles of the Indian Constitution guarantees the right to freedom of speech and expression?",
+    options: [
+      "Article 14",
+      "Article 19(1)(a)",
+      "Article 21",
+      "Article 32"
+    ],
+    correctIndex: 1,
+    explanation: "Article 19(1)(a) guarantees the right to freedom of speech and expression to all citizens, subject to reasonable restrictions under Article 19(2) regarding sovereignty, security, and public order."
+  },
+  {
+    meta: ['AP Economy', 'Group 1 — 2023', 'Medium'],
+    text: "What is the primary objective of the 'Navaratnalu' schemes implemented by the Andhra Pradesh government?",
+    options: [
+      "Urban infrastructure development",
+      "Welfare and inclusive growth",
+      "Promoting IT exports",
+      "Privatization of public sector units"
+    ],
+    correctIndex: 1,
+    explanation: "Navaratnalu is a set of nine welfare schemes aimed at improving the living standards of farmers, women, students, and marginalized sections, ensuring inclusive socio-economic growth."
+  },
+  {
+    meta: ['Geography', 'Group 2 — 2018', 'Easy'],
+    text: "Which of the following rivers is often referred to as the 'Lifeline of Andhra Pradesh'?",
+    options: [
+      "Krishna",
+      "Godavari",
+      "Penna",
+      "Tungabhadra"
+    ],
+    correctIndex: 1,
+    explanation: "The Godavari River is known as the lifeline of Andhra Pradesh due to its massive contribution to the state's agriculture, irrigation, and drinking water supply networks."
+  },
+  {
+    meta: ['General Science', 'Group 1 — 2020', 'Medium'],
+    text: "Which vitamin deficiency causes the disease 'Scurvy'?",
+    options: [
+      "Vitamin A",
+      "Vitamin B12",
+      "Vitamin C",
+      "Vitamin D"
+    ],
+    correctIndex: 2,
+    explanation: "Scurvy is caused by a severe deficiency of Vitamin C (ascorbic acid), which is essential for collagen synthesis, wound healing, and maintaining healthy gums and blood vessels."
+  }
 ];
-const correctAnswerIndex = 2; // Option C
 
 const LivePreview: React.FC = () => {
+  const [currentQ, setCurrentQ] = useState(0);
   const [hoveredOption, setHoveredOption] = useState<number | null>(null);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
+  const question = quizQuestions[currentQ];
+
   const handleOptionClick = (index: number) => {
-    // Only allow selection once for the preview
     if (selectedOption === null) {
       setSelectedOption(index);
+    }
+  };
+
+  const nextQuestion = () => {
+    if (currentQ < quizQuestions.length - 1) {
+      setCurrentQ(currentQ + 1);
+      setSelectedOption(null);
+      setHoveredOption(null);
+    } else {
+      // Loop back to start or handle end
+      setCurrentQ(0);
+      setSelectedOption(null);
+      setHoveredOption(null);
     }
   };
 
@@ -25,10 +95,10 @@ const LivePreview: React.FC = () => {
     if (selectedOption === null) {
       return hoveredOption === index ? styles.hovered : '';
     }
-    if (index === correctAnswerIndex) {
+    if (index === question.correctIndex) {
       return styles.correct;
     }
-    if (index === selectedOption && index !== correctAnswerIndex) {
+    if (index === selectedOption && index !== question.correctIndex) {
       return styles.incorrect;
     }
     return styles.dimmed;
@@ -39,7 +109,7 @@ const LivePreview: React.FC = () => {
       <div className={styles.grid}>
         
         <div className={styles.text}>
-          <div className="section-label">Live preview</div>
+          <div className="section-label" style={{ color: 'var(--green)' }}>Live preview</div>
           <h2>Questions that<br/>feel like the<br/>real exam.</h2>
           <p>
             Every question is sourced from previous papers or crafted by subject experts to match APPSC Group 1 & 2 difficulty. Explanations are clear, concise, and focused on building concepts.
@@ -51,33 +121,56 @@ const LivePreview: React.FC = () => {
 
         <div className={styles.card}>
           <div className={styles.meta}>
-            <span className={styles.pill}>AP History</span>
-            <span className={styles.pill}>Group 1 — 2022</span>
-            <span className={styles.pill}>Medium</span>
-          </div>
-
-          <div className={styles.questionText}>
-            Who founded the Vijayanagara Empire in 1336 CE, and in which present-day state is Hampi located?
-          </div>
-
-          <div className={styles.options}>
-            {quizOptions.map((opt, index) => (
-              <div 
-                key={index}
-                className={`${styles.option} ${getOptionClass(index)}`}
-                onMouseEnter={() => setHoveredOption(index)}
-                onMouseLeave={() => setHoveredOption(null)}
-                onClick={() => handleOptionClick(index)}
-              >
-                <span className={styles.letter}>{String.fromCharCode(65 + index)}</span>
-                <span className={styles.optionText}>{opt}</span>
-              </div>
+            {question.meta.map((m, i) => (
+              <span key={i} className={styles.pill}>{m}</span>
             ))}
           </div>
 
+          <div className={styles.questionText}>
+            {question.text}
+          </div>
+
+          <div className={styles.options}>
+            {question.options.map((opt, index) => {
+              const isSelected = selectedOption !== null;
+              const isCorrect = index === question.correctIndex;
+              return (
+                <div 
+                  key={index}
+                  className={`${styles.option} ${getOptionClass(index)}`}
+                  onMouseEnter={() => setHoveredOption(index)}
+                  onMouseLeave={() => setHoveredOption(null)}
+                  onClick={() => handleOptionClick(index)}
+                >
+                  <span className={styles.letter}>
+                    {(isSelected && isCorrect) ? <Check size={14} /> : String.fromCharCode(65 + index)}
+                  </span>
+                  <span className={styles.optionText}>{opt}</span>
+                </div>
+              );
+            })}
+          </div>
+
+          {selectedOption !== null && (
+            <div className={`${styles.explanation} animate-fade-in-up`}>
+              <div className={styles.explHeader}>
+                <Info size={16} /> Explanation
+              </div>
+              <p>{question.explanation}</p>
+            </div>
+          )}
+
           <div className={styles.bottom}>
-            <span className={styles.counter}>1 of 100 questions</span>
-            <span className={styles.timer}><Clock size={14} className={styles.timerIcon} /> 1:24 remaining</span>
+            <span className={styles.counter}>{currentQ + 1} of {quizQuestions.length} questions</span>
+            <div className={styles.bottomRight}>
+              {selectedOption !== null ? (
+                <button className={styles.btnNext} onClick={nextQuestion}>
+                  Next <ArrowRight size={16} />
+                </button>
+              ) : (
+                <span className={styles.timer}><Clock size={14} className={styles.timerIcon} /> 1:24 remaining</span>
+              )}
+            </div>
           </div>
         </div>
 
