@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import styles from './AppShowcase.module.css';
-import { Crown, LayoutGrid, Check, ChevronLeft, ChevronRight, ChevronDown, TrendingDown, AlertCircle, Clock, CheckSquare, Target, Lightbulb, Users, Battery, Wifi, Signal } from 'lucide-react';
+import { Crown, LayoutGrid, Check, ChevronLeft, ChevronRight, ChevronDown, TrendingDown, AlertCircle, Clock, Target, Lightbulb, Users, Battery, Wifi, Signal } from 'lucide-react';
 
 const StatusBar = () => (
   <div className={styles.statusBar}>
