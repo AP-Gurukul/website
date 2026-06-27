@@ -1,0 +1,181 @@
+.hero {
+  background: var(--bg);
+  min-height: 100vh;
+  padding: 140px 6vw 100px; /* More top padding for glass nav */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Premium subtle gradient orb in the background */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(29, 158, 117, 0.08) 0%, rgba(247, 246, 243, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.content {
+  max-width: 780px;
+  position: relative;
+  z-index: 1;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px 6px 6px;
+  border-radius: 100px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+}
+
+.pillChip {
+  background: var(--green-bg);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pillText {
+  font-size: 13px;
+  color: var(--ink2);
+  font-weight: 500;
+}
+
+.greenText {
+  color: var(--green);
+  position: relative;
+  display: inline-block;
+}
+
+/* Subtle underline for the accent word */
+.greenText::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--green-bg);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+.sub {
+  font-size: 18px;
+  color: var(--ink2);
+  max-width: 580px;
+  line-height: 1.7;
+  margin: 32px 0 48px;
+}
+
+.ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 24px rgba(14, 14, 12, 0.15);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(14, 14, 12, 0.2);
+}
+
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--ink2);
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btnGhost:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.stats {
+  border-top: 1px solid var(--line);
+  padding-top: 40px;
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.statNum {
+  font-family: 'Sora', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--ink);
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--ink3);
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 120px 4vw 80px;
+  }
+
+  .stats {
+    gap: 32px;
+  }
+}

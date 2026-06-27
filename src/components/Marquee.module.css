@@ -1,0 +1,77 @@
+.marquee {
+  background: var(--surface2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  height: 48px; /* Slightly taller for premium feel */
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Subtle fade on edges for ultra-premium look */
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--surface2) 0%, transparent 100%);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--surface2) 0%, transparent 100%);
+}
+
+.track {
+  display: flex;
+  animation: marquee 25s linear infinite;
+  width: max-content;
+}
+
+.track:hover {
+  animation-play-state: paused; /* Pause on hover for better UX */
+}
+
+.item {
+  padding: 0 40px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ink3);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Custom dot separator instead of border line for a cleaner look */
+.item::after {
+  content: '•';
+  position: absolute;
+  right: 0;
+  color: var(--line);
+  transform: translateX(50%);
+}
+
+.item:last-child::after {
+  display: none;
+}
+
+.item strong {
+  color: var(--ink2);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.item:hover strong {
+  color: var(--ink);
+}
