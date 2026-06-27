@@ -300,22 +300,8 @@ const screens = [
 const AppShowcase: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Enable horizontal scrolling with vertical mouse wheel
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      if (e.deltaY !== 0) {
-        e.preventDefault();
-        el.scrollLeft += e.deltaY;
-      }
-    };
-
-    // Use non-passive listener to allow preventDefault
-    el.addEventListener('wheel', handleWheel, { passive: false });
-    return () => el.removeEventListener('wheel', handleWheel);
-  }, []);
+  // Removed aggressive scroll-jacking that was breaking vertical page scroll
+  // Users can now natively scroll horizontally using trackpad, touch, or shift+scroll
 
   return (
     <section className={styles.showcase} id="app-showcase">
