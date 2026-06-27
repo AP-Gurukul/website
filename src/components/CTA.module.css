@@ -1,13 +1,19 @@
-.ctaSection {
+.ctaContainer {
+  background: var(--bg);
+}
+
+.ctaCard {
   background: var(--green);
-  padding: 120px 6vw;
+  padding: 100px 4vw;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-radius: 32px;
+  box-shadow: 0 20px 40px rgba(29, 158, 117, 0.15);
 }
 
-/* Add a subtle dark glow behind to make it pop */
-.ctaSection::before {
+/* Add a subtle dark glow behind to make it pop inside the card */
+.ctaCard::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -28,7 +34,7 @@
   margin: 0 auto;
 }
 
-.ctaSection h2 {
+.ctaCard h2 {
   color: #fff;
 }
 
@@ -89,7 +95,8 @@
 }
 
 @media (max-width: 700px) {
-  .ctaSection {
-    padding: 100px 4vw;
+  .ctaCard {
+    padding: 80px 4vw;
+    border-radius: 24px;
   }
 }
