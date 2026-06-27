@@ -1,32 +1,85 @@
-# React + TypeScript + Vite
+# Sadhana APPSC - Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+![Sadhana APPSC](https://sadhanappsc.com/og-image.png)
 
-Currently, two official plugins are available:
+Welcome to the official repository for the **Sadhana APPSC** web application. This is a modern, ultra-fast, React-based Single Page Application (SPA) designed to help aspirants crack the APPSC Group 1 and 2 examinations through focused practice, curated questions, and smart mock tests.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+The application is deployed and accessible at: **[https://sadhanaappsc.in](https://sadhanaappsc.in)**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the Oxlint configuration
+This project is built using modern web development standards for maximum performance and developer experience:
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- **Framework:** React 18
+- **Build Tool:** Vite
+- **Language:** TypeScript
+- **Styling:** Vanilla CSS (CSS Modules for component scoping)
+- **Icons:** Lucide React
+- **Deployment:** Vercel (Continuous Deployment)
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## 📦 Getting Started
+
+To get a local copy of the project up and running, follow these simple steps.
+
+### Prerequisites
+
+You need Node.js installed on your machine. We recommend using LTS version 18 or higher.
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/AP-Gurukul/website.git
+   ```
+
+2. **Navigate to the project directory**
+   ```bash
+   cd website
+   ```
+
+3. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser**
+   Navigate to `http://localhost:5173` to view the application in development mode.
+
+## 🏗️ Project Structure
+
+```
+website/
+├── public/               # Static assets (images, fonts, _redirects for Netlify)
+├── src/
+│   ├── assets/           # React-imported assets
+│   ├── components/       # Reusable UI components (Hero, Navbar, Features, etc.)
+│   ├── pages/            # Page-level components (Terms, Privacy, Refund)
+│   ├── App.tsx           # Main application routing and layout
+│   ├── index.css         # Global styles and variables
+│   └── main.tsx          # Application entry point
+├── .oxlintrc.json        # Linter configuration
+├── index.html            # HTML template and security meta tags
+├── package.json          # Dependencies and scripts
+├── vercel.json           # Vercel deployment configuration
+└── vite.config.ts        # Vite configuration
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## 🚀 Deployment
+
+This project uses **Continuous Deployment (CD)** via Vercel. 
+Any changes pushed to the `main` branch will automatically trigger a build and deployment to the production environment.
+
+**Deployment Fallbacks:**
+The project includes both `vercel.json` and `public/_redirects` to ensure that SPA routing works correctly regardless of whether the project is hosted on Vercel or Netlify.
+
+## 📝 License
+
+Copyright © 2026 sadhanaappsc.in - All Rights Reserved.
+This project is proprietary and confidential. Unauthorized copying, modification, or distribution is strictly prohibited.
