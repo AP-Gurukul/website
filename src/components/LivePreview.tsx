@@ -109,7 +109,7 @@ const LivePreview: React.FC = () => {
       <div className={styles.grid}>
         
         <div className={styles.text}>
-          <div className="section-label" style={{ color: 'var(--green)' }}>Live preview</div>
+          <div className="section-label">Live preview</div>
           <h2>Questions that<br/>feel like the<br/>real exam.</h2>
           <p>
             Every question is sourced from previous papers or crafted by subject experts to match APPSC Group 1 & 2 difficulty. Explanations are clear, concise, and focused on building concepts.

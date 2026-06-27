@@ -1,11 +1,10 @@
 .preview {
-  background: var(--ink); /* Dark UI from Outcomes */
+  background: var(--bg);
   position: relative;
   overflow: hidden;
-  color: #fff;
 }
 
-/* Subtle premium glow behind the card, using a dim green */
+/* Add premium background glow behind the card */
 .preview::after {
   content: '';
   position: absolute;
@@ -13,7 +12,7 @@
   right: 5%;
   width: 40vw;
   height: 40vw;
-  background: radial-gradient(circle, rgba(29, 158, 117, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(29, 158, 117, 0.05) 0%, transparent 70%);
   border-radius: 50%;
   transform: translateY(-50%);
   z-index: 0;
@@ -22,7 +21,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
   position: relative;
@@ -31,12 +30,11 @@
 
 .text h2 {
   margin-top: 12px;
-  color: #fff;
 }
 
 .text p {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--ink2);
   line-height: 1.7;
   margin: 24px 0 40px;
   max-width: 480px;
@@ -46,28 +44,33 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #fff;
-  color: var(--ink);
+  background: var(--ink);
+  color: #fff;
   border-radius: 8px;
   padding: 14px 28px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   transition: all 0.2s ease;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(14, 14, 12, 0.15);
 }
 
 .btnPrimary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 32px rgba(14, 14, 12, 0.2);
 }
 
 .card {
-  background: #141414; /* Deep premium black card */
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  padding: 36px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
 }
 
 .meta {
@@ -80,19 +83,19 @@
 .pill {
   font-size: 11px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--ink2);
   padding: 4px 12px;
   border-radius: 100px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--surface2);
+  border: 1px solid var(--line);
 }
 
 .questionText {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
-  color: #fff;
-  line-height: 1.6;
-  margin-bottom: 32px;
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 24px;
 }
 
 .options {
@@ -107,49 +110,48 @@
   gap: 16px;
   padding: 14px 20px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--line);
   transition: all 0.2s ease;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface);
 }
 
 .hovered {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: var(--ink3);
   transform: translateX(4px);
-  background: rgba(255, 255, 255, 0.04);
 }
 
 .hovered .optionText {
-  color: #fff;
+  color: var(--ink);
 }
 
 .letter {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface2);
+  border: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 11px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--ink2);
   flex-shrink: 0;
   transition: all 0.2s ease;
 }
 
 .optionText {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--ink2);
   transition: color 0.2s ease;
 }
 
 /* Correct state */
 .correct {
-  background: rgba(29, 158, 117, 0.1); /* var(--green) with opacity */
+  background: var(--green-bg);
   border-color: var(--green);
-  box-shadow: 0 4px 12px rgba(29, 158, 117, 0.15);
+  box-shadow: 0 4px 12px rgba(29, 158, 117, 0.1);
   cursor: default;
 }
 
@@ -160,13 +162,13 @@
 }
 
 .correct .optionText {
-  color: #fff;
+  color: var(--green);
   font-weight: 600;
 }
 
 /* Incorrect state */
 .incorrect {
-  background: rgba(224, 49, 49, 0.1); /* Red with opacity */
+  background: #FDF1F1;
   border-color: #E03131;
   cursor: default;
   animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
@@ -179,13 +181,13 @@
 }
 
 .incorrect .optionText {
-  color: #fff;
+  color: #E03131;
   font-weight: 600;
 }
 
 /* Dimmed state for other unselected options */
 .dimmed {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: default;
 }
 
@@ -217,7 +219,7 @@
 
 .explanation p {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--ink2);
   line-height: 1.6;
 }
 
@@ -225,14 +227,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 28px;
-  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+  padding-top: 20px;
 }
 
 .counter {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--ink3);
   font-weight: 500;
 }
 
@@ -242,11 +244,11 @@
   gap: 6px;
   font-size: 14px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--ink);
 }
 
 .timerIcon {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--ink2);
 }
 
 .btnNext {
@@ -274,8 +276,5 @@
   }
   .preview::after {
     display: none;
-  }
-  .card {
-    padding: 24px;
   }
 }
