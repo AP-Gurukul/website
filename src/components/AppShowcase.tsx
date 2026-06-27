@@ -382,29 +382,8 @@ const screens = [
 const AppShowcase: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      // If primarily scrolling vertically with a mouse wheel
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        // Check if we are at the very edges of the scroll container
-        const isAtLeft = el.scrollLeft <= 0 && e.deltaY < 0;
-        const isAtRight = Math.ceil(el.scrollLeft) >= (el.scrollWidth - el.clientWidth) && e.deltaY > 0;
-        
-        // Only hijack the vertical scroll to move horizontally IF there is still room to scroll horizontally.
-        // Once we hit the edge, we let the default vertical page scroll happen!
-        if (!isAtLeft && !isAtRight) {
-          e.preventDefault();
-          el.scrollLeft += e.deltaY;
-        }
-      }
-    };
-
-    el.addEventListener('wheel', handleWheel, { passive: false });
-    return () => el.removeEventListener('wheel', handleWheel);
-  }, []);
+  // Removed Javascript scroll-jacking completely to ensure native scrolling works flawlessly.
+  // Users will scroll horizontally via native trackpad swipe or shift+scroll.
 
   return (
     <section className={styles.showcase} id="app-showcase">
