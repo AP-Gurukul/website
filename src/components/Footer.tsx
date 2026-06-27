@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './Footer.module.css';
 
 const Footer: React.FC = () => {
@@ -45,8 +46,7 @@ const Footer: React.FC = () => {
       </div>
       
       <div className={styles.bottom}>
-        <p>&copy; {new Date().getFullYear()} Sadhana APPSC. All rights reserved.</p>
-        <p>Built for Andhra Pradesh.</p>
+        <p>Copyright &copy; {new Date().getFullYear()} sadhanaappsc.in - All Rights Reserved.</p>
       </div>
     </footer>
   );
