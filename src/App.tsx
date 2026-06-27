@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Marquee from './components/Marquee';
@@ -11,9 +12,39 @@ import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 import './index.css'; // Ensure global styles are imported
 
 function App() {
+  const [path, setPath] = useState(window.location.pathname);
+
+  useEffect(() => {
+    const handleLocationChange = () => setPath(window.location.pathname);
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
+
+  if (path === '/terms' || path === '/terms.html') {
+    return (
+      <>
+        <Navbar />
+        <Terms />
+        <Footer />
+      </>
+    );
+  }
+
+  if (path === '/privacy' || path === '/privacy.html') {
+    return (
+      <>
+        <Navbar />
+        <Privacy />
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <>
       <Navbar />

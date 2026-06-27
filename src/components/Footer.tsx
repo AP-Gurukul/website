@@ -37,8 +37,8 @@ const Footer: React.FC = () => {
         <div className={styles.links}>
           <h4>Legal</h4>
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
             <li><a href="#">Refund Policy</a></li>
           </ul>
         </div>
