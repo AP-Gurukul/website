@@ -12,7 +12,7 @@ const quizQuestions = [
       "Harihara I & Bukka I, Karnataka",
       "Deva Raya II, Maharashtra"
     ],
-    correctIndex: 2,
+    correctIndex: 2, // C
     explanation: "The Vijayanagara Empire was established in 1336 by brothers Harihara I and Bukka Raya I of the Sangama dynasty. Its ruins are located in Hampi, Karnataka, which is a UNESCO World Heritage site."
   },
   {
@@ -20,23 +20,23 @@ const quizQuestions = [
     text: "Which of the following Articles of the Indian Constitution guarantees the right to freedom of speech and expression?",
     options: [
       "Article 14",
-      "Article 19(1)(a)",
       "Article 21",
-      "Article 32"
+      "Article 32",
+      "Article 19(1)(a)"
     ],
-    correctIndex: 1,
+    correctIndex: 3, // D
     explanation: "Article 19(1)(a) guarantees the right to freedom of speech and expression to all citizens, subject to reasonable restrictions under Article 19(2) regarding sovereignty, security, and public order."
   },
   {
     meta: ['AP Economy', 'Group 1 — 2023', 'Medium'],
     text: "What is the primary objective of the 'Navaratnalu' schemes implemented by the Andhra Pradesh government?",
     options: [
-      "Urban infrastructure development",
       "Welfare and inclusive growth",
+      "Urban infrastructure development",
       "Promoting IT exports",
       "Privatization of public sector units"
     ],
-    correctIndex: 1,
+    correctIndex: 0, // A
     explanation: "Navaratnalu is a set of nine welfare schemes aimed at improving the living standards of farmers, women, students, and marginalized sections, ensuring inclusive socio-economic growth."
   },
   {
@@ -44,11 +44,11 @@ const quizQuestions = [
     text: "Which of the following rivers is often referred to as the 'Lifeline of Andhra Pradesh'?",
     options: [
       "Krishna",
-      "Godavari",
       "Penna",
+      "Godavari",
       "Tungabhadra"
     ],
-    correctIndex: 1,
+    correctIndex: 2, // C
     explanation: "The Godavari River is known as the lifeline of Andhra Pradesh due to its massive contribution to the state's agriculture, irrigation, and drinking water supply networks."
   },
   {
@@ -56,11 +56,11 @@ const quizQuestions = [
     text: "Which vitamin deficiency causes the disease 'Scurvy'?",
     options: [
       "Vitamin A",
-      "Vitamin B12",
       "Vitamin C",
+      "Vitamin B12",
       "Vitamin D"
     ],
-    correctIndex: 2,
+    correctIndex: 1, // B
     explanation: "Scurvy is caused by a severe deficiency of Vitamin C (ascorbic acid), which is essential for collagen synthesis, wound healing, and maintaining healthy gums and blood vessels."
   }
 ];

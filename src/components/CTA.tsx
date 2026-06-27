@@ -18,7 +18,7 @@ const CTA: React.FC = () => {
               <Download size={16} /> Download for Android
             </a>
             <a href="#" className={styles.btnGhostDark}>
-              Download for iOS
+              iOS (Coming soon)
             </a>
           </div>
         </div>
