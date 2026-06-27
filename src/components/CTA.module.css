@@ -1,20 +1,26 @@
-.ctaSection {
-  background: var(--green);
-  padding: 120px 6vw;
+.ctaContainer {
+  background: var(--bg);
+}
+
+.ctaCard {
+  background: var(--ink); /* Changed to black as requested */
+  padding: 100px 4vw;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-radius: 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Add a subtle dark glow behind to make it pop */
-.ctaSection::before {
+/* Subtle premium glow behind to make it pop inside the dark card */
+.ctaCard::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   width: 60vw;
   height: 60vw;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(29, 158, 117, 0.15) 0%, transparent 60%);
   transform: translate(-50%, -50%);
   border-radius: 50%;
   z-index: 0;
@@ -28,13 +34,13 @@
   margin: 0 auto;
 }
 
-.ctaSection h2 {
+.ctaCard h2 {
   color: #fff;
 }
 
 .sub {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
   margin: 24px auto 48px;
 }
@@ -52,7 +58,7 @@
   justify-content: center;
   gap: 8px;
   background: #fff;
-  color: var(--green);
+  color: var(--ink);
   border-radius: 8px;
   padding: 14px 32px;
   font-size: 14px;
@@ -72,24 +78,25 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
   border-radius: 8px;
   padding: 14px 32px;
   font-size: 14px;
   font-weight: 500;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .btnGhostDark:hover {
-  background: rgba(0,0,0,0.2);
-  border-color: rgba(255,255,255,0.4);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 700px) {
-  .ctaSection {
-    padding: 100px 4vw;
+  .ctaCard {
+    padding: 80px 4vw;
+    border-radius: 24px;
   }
 }

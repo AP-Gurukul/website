@@ -17,10 +17,18 @@ const Navbar: React.FC = () => {
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     setIsMobileOpen(false);
+
+    if (window.location.pathname !== '/') {
+      window.location.href = targetId === 'hero' ? '/' : `/#${targetId}`;
+      return;
+    }
+
     const target = document.getElementById(targetId);
     if (target) {
       const offsetTop = target.offsetTop - 70;
       window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    } else if (targetId === 'hero') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 

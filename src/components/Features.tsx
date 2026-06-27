@@ -1,5 +1,5 @@
 import styles from './Features.module.css';
-import { Book, Clock, BarChart2, Lightbulb, Bookmark, FileText } from 'lucide-react';
+import { Book, Clock, BarChart2, Lightbulb, CheckSquare, FileText } from 'lucide-react';
 
 const Features: React.FC = () => {
   return (
@@ -49,10 +49,10 @@ const Features: React.FC = () => {
 
         <div className={styles.card}>
           <div className={`${styles.icon} ${styles.amber}`}>
-            <Bookmark size={20} strokeWidth={2} />
+            <CheckSquare size={20} strokeWidth={2} />
           </div>
-          <h3>Bookmark & review</h3>
-          <p>Save tricky questions for later. Synced across devices.</p>
+          <h3>Syllabus tracker</h3>
+          <p>Visually track your progress. Check off topics as you learn and instantly see your completion percentage.</p>
         </div>
 
         <div className={styles.card}>

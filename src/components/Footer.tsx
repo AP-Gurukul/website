@@ -26,20 +26,19 @@ const Footer: React.FC = () => {
         </div>
 
         <div className={styles.links}>
-          <h4>Company</h4>
+          <h4>Support</h4>
           <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="mailto:appscsadhana@gmail.com">Contact Us</a></li>
+            <li><a href="mailto:appscsadhana@gmail.com">Help Center</a></li>
           </ul>
         </div>
 
         <div className={styles.links}>
           <h4>Legal</h4>
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Refund Policy</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/refund">Refund Policy</a></li>
           </ul>
         </div>
 
