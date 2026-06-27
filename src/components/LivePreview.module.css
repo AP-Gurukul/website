@@ -147,10 +147,12 @@
   transition: color 0.2s ease;
 }
 
+/* Correct state */
 .correct {
   background: var(--green-bg);
   border-color: var(--green);
   box-shadow: 0 4px 12px rgba(29, 158, 117, 0.1);
+  cursor: default;
 }
 
 .correct .letter {
@@ -161,7 +163,39 @@
 
 .correct .optionText {
   color: var(--green);
-  font-weight: 500;
+  font-weight: 600;
+}
+
+/* Incorrect state */
+.incorrect {
+  background: #FDF1F1;
+  border-color: #E03131;
+  cursor: default;
+  animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.incorrect .letter {
+  background: #E03131;
+  border-color: #E03131;
+  color: #fff;
+}
+
+.incorrect .optionText {
+  color: #E03131;
+  font-weight: 600;
+}
+
+/* Dimmed state for other unselected options */
+.dimmed {
+  opacity: 0.5;
+  cursor: default;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
 }
 
 .bottom {

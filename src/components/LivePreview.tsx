@@ -2,8 +2,37 @@ import React, { useState } from 'react';
 import styles from './LivePreview.module.css';
 import { ArrowRight, Clock } from 'lucide-react';
 
+const quizOptions = [
+  "Krishna Deva Raya, Andhra Pradesh",
+  "Bukka Raya I, Tamil Nadu",
+  "Harihara I & Bukka I, Karnataka",
+  "Deva Raya II, Maharashtra"
+];
+const correctAnswerIndex = 2; // Option C
+
 const LivePreview: React.FC = () => {
   const [hoveredOption, setHoveredOption] = useState<number | null>(null);
+  const [selectedOption, setSelectedOption] = useState<number | null>(null);
+
+  const handleOptionClick = (index: number) => {
+    // Only allow selection once for the preview
+    if (selectedOption === null) {
+      setSelectedOption(index);
+    }
+  };
+
+  const getOptionClass = (index: number) => {
+    if (selectedOption === null) {
+      return hoveredOption === index ? styles.hovered : '';
+    }
+    if (index === correctAnswerIndex) {
+      return styles.correct;
+    }
+    if (index === selectedOption && index !== correctAnswerIndex) {
+      return styles.incorrect;
+    }
+    return styles.dimmed;
+  };
 
   return (
     <section className={`section-pad ${styles.preview}`} id="preview">
@@ -32,37 +61,18 @@ const LivePreview: React.FC = () => {
           </div>
 
           <div className={styles.options}>
-            <div 
-              className={`${styles.option} ${hoveredOption === 0 ? styles.hovered : ''}`}
-              onMouseEnter={() => setHoveredOption(0)}
-              onMouseLeave={() => setHoveredOption(null)}
-            >
-              <span className={styles.letter}>A</span>
-              <span className={styles.optionText}>Krishna Deva Raya, Andhra Pradesh</span>
-            </div>
-            
-            <div 
-              className={`${styles.option} ${hoveredOption === 1 ? styles.hovered : ''}`}
-              onMouseEnter={() => setHoveredOption(1)}
-              onMouseLeave={() => setHoveredOption(null)}
-            >
-              <span className={styles.letter}>B</span>
-              <span className={styles.optionText}>Bukka Raya I, Tamil Nadu</span>
-            </div>
-
-            <div className={`${styles.option} ${styles.correct}`}>
-              <span className={styles.letter}>C</span>
-              <span className={styles.optionText}>Harihara I & Bukka I, Karnataka</span>
-            </div>
-
-            <div 
-              className={`${styles.option} ${hoveredOption === 3 ? styles.hovered : ''}`}
-              onMouseEnter={() => setHoveredOption(3)}
-              onMouseLeave={() => setHoveredOption(null)}
-            >
-              <span className={styles.letter}>D</span>
-              <span className={styles.optionText}>Deva Raya II, Maharashtra</span>
-            </div>
+            {quizOptions.map((opt, index) => (
+              <div 
+                key={index}
+                className={`${styles.option} ${getOptionClass(index)}`}
+                onMouseEnter={() => setHoveredOption(index)}
+                onMouseLeave={() => setHoveredOption(null)}
+                onClick={() => handleOptionClick(index)}
+              >
+                <span className={styles.letter}>{String.fromCharCode(65 + index)}</span>
+                <span className={styles.optionText}>{opt}</span>
+              </div>
+            ))}
           </div>
 
           <div className={styles.bottom}>
