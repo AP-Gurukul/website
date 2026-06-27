@@ -185,12 +185,18 @@ const ScreenDetailed = () => (
       </div>
       <div className={styles.qText}>In the context of the historical schisms within Jainism, which group completely rejected image worship and temple rituals?</div>
       
-      <div className={styles.opt}><div className={styles.optLetter}>A</div></div>
+      <div className={styles.opt}>
+        <div className={styles.optLetter}>A</div> Digambaras and Svetambaras
+      </div>
       <div className={`${styles.opt} ${styles.correct}`}>
         <div className={styles.optLetter}>B</div> Sthanakvasis and Terapanthis <Check size={18} style={{marginLeft: 'auto'}} />
       </div>
-      <div className={styles.opt}><div className={styles.optLetter}>C</div></div>
-      <div className={styles.opt}><div className={styles.optLetter}>D</div></div>
+      <div className={styles.opt}>
+        <div className={styles.optLetter}>C</div> Ajivikas and Charvakas
+      </div>
+      <div className={styles.opt}>
+        <div className={styles.optLetter}>D</div> Mahasanghikas and Theravadins
+      </div>
 
       <div className={styles.qTags}>
         <div className={styles.qTag}><Clock size={12} /> 42 sec</div>
