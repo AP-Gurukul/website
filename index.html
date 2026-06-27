@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ── Meta tags for SEO and proper rendering ── -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page title — appears in browser tab and search results -->
+  <title>APPSC Sadhana — Focused APPSC Exam Preparation App</title>
+
+  <!-- Meta description for search engines — compelling summary of the app -->
+  <meta name="description" content="APPSC Sadhana — 50,000+ curated questions, detailed explanations, and smart mock tests for APPSC exam preparation. Built for Andhra Pradesh aspirants.">
+
+  <!-- Open Graph meta tags — for social media sharing previews -->
+  <meta property="og:title" content="APPSC Sadhana — Crack APPSC with Focused Practice">
+  <meta property="og:description" content="50,000+ curated questions, detailed explanations, and smart mock tests. Built for APPSC aspirants in Andhra Pradesh.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts — Sora for headings, Inter for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Sora:wght@300;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet — design system + all component styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════
+       Section 1: Navigation Bar
+       Fixed top nav with frosted glass effect, logo, links, CTA
+       Visible on every page — always accessible
+       ════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+
+    <!-- Logo: green dot + "APPSC Sadhana" wordmark -->
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-dot"></span>  <!-- Green circle brand dot -->
+      <span class="nav-logo-text">APPSC Sadhana</span>
+    </a>
+
+    <!-- Center navigation links — smooth scroll to sections -->
+    <div class="nav-links" id="navLinks">
+      <a href="#features">Features</a>    <!-- Scrolls to Features section -->
+      <a href="#subjects">Subjects</a>    <!-- Scrolls to Subjects section -->
+      <a href="#pricing">Plans</a>        <!-- Scrolls to Pricing section -->
+      <a href="#faq">FAQ</a>              <!-- Scrolls to FAQ section -->
+    </div>
+
+    <!-- CTA button — primary action in nav -->
+    <a href="#final-cta" class="nav-cta">Start Free</a>
+
+    <!-- Hamburger menu button — visible only on mobile (≤700px) -->
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu">
+      <span></span>  <!-- Top bar -->
+      <span></span>  <!-- Middle bar -->
+      <span></span>  <!-- Bottom bar -->
+    </button>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════════
+       Section 2: Hero
+       Full-screen landing section with headline, CTAs, and stats
+       First thing users see — makes the first impression
+       ════════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+
+      <!-- Announcement pill — highlights the app is designed for APPSC -->
+      <div class="hero-pill">
+        <span class="hero-pill-chip">New</span>           <!-- Green "New" badge chip -->
+        <span class="hero-pill-text">Designed for APPSC aspirants</span>
+      </div>
+
+      <!-- Main headline — massive 3-line heading -->
+      <!-- "focused" word is styled in green accent color -->
+      <h1>Crack APPSC<br>with <span class="green">focused</span><br>practice.</h1>
+
+      <!-- Subheadline — explains the app's value proposition -->
+      <p class="hero-sub">Thousands of curated questions, detailed explanations, and smart mock tests — all in one clean, distraction-free app built for Andhra Pradesh government exam success.</p>
+
+      <!-- Call-to-action buttons row -->
+      <div class="hero-ctas">
+        <a href="#final-cta" class="btn-primary">Download the App</a>           <!-- Primary CTA -->
+        <a href="#how-it-works" class="btn-ghost">See how it works</a>  <!-- Secondary ghost CTA -->
+      </div>
+
+      <!-- Stats bar — social proof numbers below the CTAs -->
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">50K+</span>          <!-- Total questions -->
+          <span class="hero-stat-label">Questions in bank</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">12</span>             <!-- Subject count -->
+          <span class="hero-stat-label">Subjects covered</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">8,200+</span>        <!-- Active users -->
+          <span class="hero-stat-label">Active students</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">91%</span>            <!-- Improvement rate -->
+          <span class="hero-stat-label">Accuracy improvement</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       Section 3: Marquee / Ticker Strip
+       Infinite scrolling strip showing supported APPSC exams
+       Between Hero and Features — builds credibility
+       ════════════════════════════════════════════════════════════ -->
+  <div class="marquee">
+    <!-- Track container — holds two copies of items for seamless loop -->
+    <div class="marquee-track">
+      <!-- First copy of exam names — visible and scrolling -->
+      <div class="marquee-item"><strong>Group 1 Prelims</strong></div>
+      <div class="marquee-item"><strong>Group 2 Mains</strong></div>
+      <div class="marquee-item"><strong>Panchayat Secretary</strong></div>
+      <div class="marquee-item"><strong>VRO / VRA</strong></div>
+      <div class="marquee-item"><strong>AEE Civil</strong></div>
+      <div class="marquee-item"><strong>Forest Beat Officer</strong></div>
+      <div class="marquee-item"><strong>Police Constable</strong></div>
+      <div class="marquee-item"><strong>Junior Lecturer</strong></div>
+
+      <!-- Second copy — duplicated for seamless infinite scroll loop -->
+      <div class="marquee-item"><strong>Group 1 Prelims</strong></div>
+      <div class="marquee-item"><strong>Group 2 Mains</strong></div>
+      <div class="marquee-item"><strong>Panchayat Secretary</strong></div>
+      <div class="marquee-item"><strong>VRO / VRA</strong></div>
+      <div class="marquee-item"><strong>AEE Civil</strong></div>
+      <div class="marquee-item"><strong>Forest Beat Officer</strong></div>
+      <div class="marquee-item"><strong>Police Constable</strong></div>
+      <div class="marquee-item"><strong>Junior Lecturer</strong></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════
+       Section 4: Features
+       3-column bordered grid showcasing 6 core app features
+       White background — clean, scannable layout
+       ════════════════════════════════════════════════════════════ -->
+  <section class="features section-pad" id="features">
+
+    <!-- Section header — label + heading + subtext -->
+    <div class="features-head">
+      <div class="section-label">Features</div>
+      <h2>Everything you need.<br>Nothing you don't.</h2>
+      <p class="section-sub">A focused toolkit built around how APPSC toppers actually prepare — not a generic study app.</p>
+    </div>
+
+    <!-- 3×2 bordered feature grid — 6 cards total -->
+    <div class="features-grid">
+
+      <!-- Feature 1: Topic-wise question bank (green icon) -->
+      <div class="feature-card">
+        <div class="feature-icon green">📚</div>  <!-- Book emoji on green bg -->
+        <h3>Topic-wise question bank</h3>
+        <p>Drill into any topic with 100s of questions organized exactly as per APPSC syllabus.</p>
+      </div>
+
+      <!-- Feature 2: Timed mock tests (amber icon) -->
+      <div class="feature-card">
+        <div class="feature-icon amber">⏱️</div>  <!-- Timer emoji on amber bg -->
+        <h3>Timed mock tests</h3>
+        <p>Simulate real exam pressure with full-length mocks. Auto-submit when time ends.</p>
+      </div>
+
+      <!-- Feature 3: Performance analytics (blue icon) -->
+      <div class="feature-card">
+        <div class="feature-icon blue">📊</div>  <!-- Chart emoji on blue bg -->
+        <h3>Performance analytics</h3>
+        <p>Know exactly where you're losing marks. Accuracy graphs, weak topic flags, score trends.</p>
+      </div>
+
+      <!-- Feature 4: Detailed explanations (green icon) -->
+      <div class="feature-card">
+        <div class="feature-icon green">💡</div>  <!-- Lightbulb emoji on green bg -->
+        <h3>Detailed explanations</h3>
+        <p>Every question has a thorough explanation — not just the answer, but the reasoning.</p>
+      </div>
+
+      <!-- Feature 5: Bookmark & review (amber icon) -->
+      <div class="feature-card">
+        <div class="feature-icon amber">🔖</div>  <!-- Bookmark emoji on amber bg -->
+        <h3>Bookmark & review</h3>
+        <p>Save tricky questions for later. Synced across devices.</p>
+      </div>
+
+      <!-- Feature 6: Previous year papers (blue icon) -->
+      <div class="feature-card">
+        <div class="feature-icon blue">📄</div>  <!-- Paper emoji on blue bg -->
+        <h3>Previous year papers</h3>
+        <p>Practice directly from past APPSC papers by year and exam type.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       Section 5: Subjects / Syllabus Coverage
+       8 subject cards showing question counts and category badges
+       Warm off-white background — visual breathing room
+       ════════════════════════════════════════════════════════════ -->
+  <section class="subjects section-pad" id="subjects">
+
+    <!-- Header — split layout: heading left, description right -->
+    <div class="subjects-head">
+      <div>
+        <div class="section-label">Syllabus coverage</div>
+        <h2>All APPSC subjects. One app.</h2>
+      </div>
+      <p class="subjects-head-right">Comprehensive coverage across every exam category — from General Studies to Data Interpretation.</p>
+    </div>
+
+    <!-- Subjects grid — 8 cards with counts, names, and badges -->
+    <div class="subjects-grid">
+
+      <!-- Subject 1: General Studies — Core subject (green badge) -->
+      <div class="subject-card">
+        <div class="subject-count">6,200+</div>
+        <div class="subject-name">General Studies & Current Affairs</div>
+        <span class="badge green">Core</span>
+      </div>
+
+      <!-- Subject 2: AP History — AP-specific content (blue badge) -->
+      <div class="subject-card">
+        <div class="subject-count">4,800+</div>
+        <div class="subject-name">Andhra Pradesh History & Culture</div>
+        <span class="badge blue">AP Specific</span>
+      </div>
+
+      <!-- Subject 3: Indian Polity — Core subject (green badge) -->
+      <div class="subject-card">
+        <div class="subject-count">5,100+</div>
+        <div class="subject-name">Indian Polity & Governance</div>
+        <span class="badge green">Core</span>
+      </div>
+
+      <!-- Subject 4: Geography — Core subject (green badge) -->
+      <div class="subject-card">
+        <div class="subject-count">3,900+</div>
+        <div class="subject-name">Geography — India & AP</div>
+        <span class="badge green">Core</span>
+      </div>
+
+      <!-- Subject 5: Economy — Important subject (amber badge) -->
+      <div class="subject-card">
+        <div class="subject-count">4,400+</div>
+        <div class="subject-name">Economy & Development</div>
+        <span class="badge amber">Important</span>
+      </div>
+
+      <!-- Subject 6: Science & Tech — Group 1 specific (blue badge) -->
+      <div class="subject-card">
+        <div class="subject-count">3,300+</div>
+        <div class="subject-name">Science & Technology</div>
+        <span class="badge blue">Group 1</span>
+      </div>
+
+      <!-- Subject 7: Reasoning — Important subject (amber badge) -->
+      <div class="subject-card">
+        <div class="subject-count">2,800+</div>
+        <div class="subject-name">Reasoning & Mental Ability</div>
+        <span class="badge amber">Important</span>
+      </div>
+
+      <!-- Subject 8: Data Interpretation — Group 2 specific (blue badge) -->
+      <div class="subject-card">
+        <div class="subject-count">2,200+</div>
+        <div class="subject-name">Data Interpretation</div>
+        <span class="badge blue">Group 2</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       Section 6: How It Works
+       4-step horizontal flow showing the user journey
+       White background — clean, linear process
+       ════════════════════════════════════════════════════════════ -->
+  <section class="how-it-works section-pad" id="how-it-works">
+
+    <!-- Section header -->
+    <div class="how-head">
+      <div class="section-label">How it works</div>
+      <h2>Simple by design.</h2>
+      <p class="section-sub">Four steps between you and your score improvement. No setup required.</p>
+    </div>
+
+    <!-- Steps grid — 4 columns with arrow indicators between them -->
+    <div class="steps-grid">
+
+      <!-- Step 1: Pick your exam -->
+      <div class="step-card">
+        <div class="step-num">01</div>                         <!-- Step number -->
+        <h3>Pick your exam</h3>
+        <p>Select from Group 1, Group 2, Panchayat Secretary, and 10+ other APPSC exams. Syllabus maps automatically.</p>
+        <span class="step-arrow">→</span>                    <!-- Arrow to next step -->
+      </div>
+
+      <!-- Step 2: Practice by topic -->
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3>Practice by topic</h3>
+        <p>Go deep into any chapter. Untimed mode first to build confidence, then timed.</p>
+        <span class="step-arrow">→</span>
+      </div>
+
+      <!-- Step 3: Take mock tests -->
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3>Take mock tests</h3>
+        <p>Full-length mocks with actual exam conditions: question count, time limits, negative marking.</p>
+        <span class="step-arrow">→</span>
+      </div>
+
+      <!-- Step 4: Review & improve (last step — no arrow) -->
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h3>Review & improve</h3>
+        <p>Weak areas auto-flagged after each test. Revisit until accuracy hits 90%+.</p>
+        <span class="step-arrow">→</span>  <!-- Hidden via CSS for last-child -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       Section 7: Live Question Preview
+       Two-column: text left, interactive question card right
+       Warm off-white — visual break before dark outcomes section
+       ════════════════════════════════════════════════════════════ -->
+  <section class="preview section-pad" id="preview">
+
+    <div class="preview-grid">
+
+      <!-- Left column — marketing text + CTA -->
+      <div class="preview-text">
+        <div class="section-label">Live preview</div>
+        <h2>Questions that<br>feel like the<br>real exam.</h2>
+        <p>Every question is sourced from previous papers or crafted by subject experts to match APPSC difficulty. Explanations are written in clear Telugu-focused context.</p>
+        <a href="#final-cta" class="btn-primary">Try a free test →</a>   <!-- CTA link -->
+      </div>
+
+      <!-- Right column — question card mockup -->
+      <!-- Static visual mockup — no actual quiz logic needed -->
+      <div class="question-card">
+
+        <!-- Meta pills — topic, exam year, difficulty level -->
+        <div class="q-meta">
+          <span class="q-meta-pill">AP History</span>
+          <span class="q-meta-pill">Group 1 — 2022</span>
+          <span class="q-meta-pill">Medium</span>
+        </div>
+
+        <!-- Question text -->
+        <div class="q-text">Who founded the Vijayanagara Empire in 1336 CE, and in which present-day state is Hampi located?</div>
+
+        <!-- Answer options — A, B, C (correct), D -->
+        <div class="q-options">
+
+          <!-- Option A — normal state -->
+          <div class="q-option">
+            <span class="q-option-letter">A</span>
+            <span class="q-option-text">Krishna Deva Raya, Andhra Pradesh</span>
+          </div>
+
+          <!-- Option B — normal state -->
+          <div class="q-option">
+            <span class="q-option-letter">B</span>
+            <span class="q-option-text">Bukka Raya I, Tamil Nadu</span>
+          </div>
+
+          <!-- Option C — CORRECT answer (pre-highlighted green) -->
+          <div class="q-option correct">
+            <span class="q-option-letter">C</span>
+            <span class="q-option-text">Harihara I & Bukka I, Karnataka</span>
+          </div>
+
+          <!-- Option D — normal state -->
+          <div class="q-option">
+            <span class="q-option-letter">D</span>
+            <span class="q-option-text">Deva Raya II, Maharashtra</span>
+          </div>
+
+        </div>
+
+        <!-- Bottom bar — question counter + timer display -->
+        <div class="q-bottom">
+          <span class="q-counter">1 of 100 questions</span>      <!-- Progress indicator -->
+          <span class="q-timer">⏱ 1:24 remaining</span>         <!-- Timer display -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       Section 8: Results / Outcomes
+       Dark near-black section with stat cards — dramatic contrast
+       Numbers that demonstrate the app's effectiveness
+       ════════════════════════════════════════════════════════════ -->
+  <section class="outcomes section-pad" id="outcomes">
+
+    <!-- Section header — light text on dark background -->
+    <div class="section-label">Outcomes</div>
+    <h2>Numbers that speak.</h2>
+    <p class="section-sub">Measurable results from students who committed to daily practice with APPSC Sadhana.</p>
+
+    <!-- Results grid — 4 stat cards -->
+    <div class="outcomes-grid">
+
+      <!-- Stat 1: Score improvement -->
+      <div class="outcome-card">
+        <div class="outcome-num">91%</div>
+        <div class="outcome-label">Score improvement after 30 days</div>
+      </div>
+
+      <!-- Stat 2: Revision speed -->
+      <div class="outcome-card">
+        <div class="outcome-num">3.2×</div>
+        <div class="outcome-label">Faster revision speed</div>
+      </div>
+
+      <!-- Stat 3: Active students -->
+      <div class="outcome-card">
+        <div class="outcome-num">8,200+</div>
+        <div class="outcome-label">Active registered students</div>
+      </div>
+
+      <!-- Stat 4: Question count -->
+      <div class="outcome-card">
+        <div class="outcome-num">50K+</div>
+        <div class="outcome-label">Questions with explanations</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       Section 9: Testimonials
+       Student success stories — social proof cards
+       White background — clean, trustworthy feel
+       ════════════════════════════════════════════════════════════ -->
+  <section class="testimonials section-pad" id="testimonials">
+
+    <!-- Section header -->
+    <div class="testimonials-head">
+      <div class="section-label">Student stories</div>
+      <h2>From aspirants who made it.</h2>
+    </div>
+
+    <!-- Testimonial grid — 3 cards -->
+    <div class="testimonials-grid">
+
+      <!-- Testimonial 1: Ravi Kumar — Group 1 Rank 48 -->
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"APPSC Sadhana's topic-wise practice changed my preparation completely. The explanations are so clear — I finally understood concepts I'd been struggling with for months. My prelims score jumped from 68 to 142."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RK</div>     <!-- Initials avatar -->
+          <div>
+            <div class="testimonial-name">Ravi Kumar</div>
+            <div class="testimonial-role">Group 1 Prelims qualifier, 2024</div>
+          </div>
+          <span class="badge green testimonial-badge">Rank 48</span>   <!-- Score badge -->
+        </div>
+      </div>
+
+      <!-- Testimonial 2: Swathi L. — Panchayat Secretary Cleared -->
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"I was using three different apps before this. APPSC Sadhana replaced all of them. The mock tests are exactly like the real exam — timing, difficulty, everything. I cleared on my first attempt."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SL</div>
+          <div>
+            <div class="testimonial-name">Swathi L.</div>
+            <div class="testimonial-role">Panchayat Secretary selected, 2024</div>
+          </div>
+          <span class="badge green testimonial-badge">Cleared</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 3: Mahesh Reddy — VRO Cleared -->
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"The performance analytics showed me exactly where I was weak. I focused on those areas and within two months my accuracy in Geography went from 45% to 89%. Best investment I made."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MR</div>
+          <div>
+            <div class="testimonial-name">Mahesh Reddy</div>
+            <div class="testimonial-role">VRO selected, Guntur district</div>
+          </div>
+          <span class="badge green testimonial-badge">Cleared</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       Section 10: Pricing Plans
+       3-plan grid — Starter (free), Pro (featured dark), Annual
+       Warm off-white background — inviting, low-pressure
+       ════════════════════════════════════════════════════════════ -->
+  <section class="pricing section-pad" id="pricing">
+
+    <!-- Section header -->
+    <div class="pricing-head">
+      <div class="section-label">Plans</div>
+      <h2>Simple, honest pricing.</h2>
+      <p class="section-sub">No hidden fees. Upgrade or cancel anytime.</p>
+    </div>
+
+    <!-- Plans grid — 3 cards -->
+    <div class="plans-grid">
+
+      <!-- Plan 1: Starter (Free) -->
+      <div class="plan-card">
+        <div class="plan-tag">Free</div>
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">₹0</div>
+        <div class="plan-period">Forever free</div>
+        <hr class="plan-divider">
+        <div class="plan-features">
+          <div class="plan-feature"><span class="plan-dot"></span> 100 questions per day</div>
+          <div class="plan-feature"><span class="plan-dot"></span> 2 subjects</div>
+          <div class="plan-feature"><span class="plan-dot"></span> Basic performance report</div>
+          <div class="plan-feature"><span class="plan-dot"></span> 1 mock test per month</div>
+        </div>
+        <a href="#" class="plan-btn">Get started</a>
+      </div>
+
+      <!-- Plan 2: Pro (Featured — dark background card) -->
+      <div class="plan-card featured">
+        <div class="plan-tag">Most popular</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price">₹199<span style="font-size:14px;font-weight:400;letter-spacing:0">/mo</span></div>
+        <div class="plan-period">Billed monthly</div>
+        <hr class="plan-divider">
+        <div class="plan-features">
+          <div class="plan-feature"><span class="plan-dot"></span> Unlimited questions</div>
+          <div class="plan-feature"><span class="plan-dot"></span> All 12 subjects</div>
+          <div class="plan-feature"><span class="plan-dot"></span> Unlimited mock tests</div>
+          <div class="plan-feature"><span class="plan-dot"></span> Full analytics dashboard</div>
+          <div class="plan-feature"><span class="plan-dot"></span> 10 years of past papers</div>
+          <div class="plan-feature"><span class="plan-dot"></span> Bookmarks & sync</div>
+        </div>
+        <a href="#" class="plan-btn">Start free trial</a>
+      </div>
+
+      <!-- Plan 3: Annual (Best value) -->
+      <div class="plan-card">
+        <div class="plan-tag">Best value</div>
+        <div class="plan-name">Annual</div>
+        <div class="plan-price">₹999<span style="font-size:14px;font-weight:400;letter-spacing:0">/yr</span></div>
+        <div class="plan-period">Save ₹1,389</div>
+        <hr class="plan-divider">
+        <div class="plan-features">
+          <div class="plan-feature"><span class="plan-dot"></span> Everything in Pro</div>
+          <div class="plan-feature"><span class="plan-dot"></span> Priority feature updates</div>
+          <div class="plan-feature"><span class="plan-dot"></span> Exam notification alerts</div>
+          <div class="plan-feature"><span class="plan-dot"></span> Doubt support</div>
+        </div>
+        <a href="#" class="plan-btn">Get annual plan</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       Section 11: FAQ
+       Accordion-style frequently asked questions
+       White background — clean, scannable answers
+       ════════════════════════════════════════════════════════════ -->
+  <section class="faq section-pad" id="faq">
+
+    <!-- Section header -->
+    <div class="faq-head">
+      <div class="section-label">FAQ</div>
+      <h2>Quick answers.</h2>
+    </div>
+
+    <!-- FAQ list — bordered container with accordion items -->
+    <div class="faq-list">
+
+      <!-- FAQ 1: Which exams does the app cover? -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Which APPSC exams does the app cover?</span>
+          <span class="faq-toggle">+</span>  <!-- Toggle icon: + when closed, − when open -->
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Group 1, 2, 3, Panchayat Secretary, VRO/VRA, AEE, Police Constable, Junior Lecturer, Forest Beat Officer, and more. New exams added with each notification.</div>
+        </div>
+      </div>
+
+      <!-- FAQ 2: Language support -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is the content in Telugu or English?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">English currently. Full Telugu support coming in the next major update.</div>
+        </div>
+      </div>
+
+      <!-- FAQ 3: Question update frequency -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How often are questions updated?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">New questions every week. After any APPSC notification, questions added within 48 hours.</div>
+        </div>
+      </div>
+
+      <!-- FAQ 4: Offline support -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I use it offline?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes. Download question sets, practice offline. Scores sync on next connection.</div>
+        </div>
+      </div>
+
+      <!-- FAQ 5: Refund policy -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is there a refund policy?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Full refund within 7 days of a paid plan, no questions asked.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       Section 12: Final CTA
+       Dark section with centered call-to-action
+       Last push before footer — drives downloads
+       ════════════════════════════════════════════════════════════ -->
+  <section class="final-cta" id="final-cta">
+
+    <!-- Centered heading — white on dark -->
+    <h2>Start preparing<br>the smart way.</h2>
+
+    <!-- Subtext — muted white -->
+    <p class="final-cta-sub">Join 8,200+ APPSC aspirants already using APPSC Sadhana to sharpen their scores every day.</p>
+
+    <!-- Download buttons row -->
+    <div class="final-cta-btns">
+      <a href="#" class="btn-primary-light">Download for Android</a>      <!-- White button -->
+      <a href="#" class="btn-ghost-dark">Download for iOS</a>             <!-- Ghost button -->
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       Section 13: Footer
+       Brand info, link columns, copyright
+       Warm off-white — wraps up the page cleanly
+       ════════════════════════════════════════════════════════════ -->
+  <footer class="footer" id="footer">
+
+    <!-- Top row — brand left, link columns right -->
+    <div class="footer-top">
+
+      <!-- Brand block: logo + tagline -->
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <span class="nav-logo-dot"></span>
+          <span class="nav-logo-text">APPSC Sadhana</span>
+        </a>
+        <p class="footer-tagline">Focused APPSC exam preparation for Andhra Pradesh aspirants.</p>
+      </div>
+
+      <!-- Link columns — Product, Exams, Company -->
+      <div class="footer-links">
+
+        <!-- Product links column -->
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="#features">Features</a>
+          <a href="#subjects">Subjects</a>
+          <a href="#how-it-works">Mock Tests</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+
+        <!-- Exams links column -->
+        <div class="footer-col">
+          <span class="footer-col-title">Exams</span>
+          <a href="#">Group 1</a>
+          <a href="#">Group 2</a>
+          <a href="#">Panchayat Secretary</a>
+          <a href="#">VRO / VRA</a>
+        </div>
+
+        <!-- Company links column -->
+        <div class="footer-col">
+          <span class="footer-col-title">Company</span>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom bar — copyright + tagline -->
+    <div class="footer-bottom">
+      <span>© 2025 APPSC Sadhana. All rights reserved.</span>
+      <span>Built for APPSC aspirants across Andhra Pradesh.</span>
+    </div>
+
+  </footer>
+
+  <!-- JavaScript — FAQ accordion, smooth scroll, mobile nav toggle -->
+  <script src="script.js"></script>
+
+</body>
+</html>
