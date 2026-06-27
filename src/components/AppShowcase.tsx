@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from './AppShowcase.module.css';
-import { Crown, LayoutGrid, Check, ChevronDown, ChevronRight, TrendingUp, TrendingDown, AlertCircle, Clock, CheckSquare } from 'lucide-react';
+import { Crown, LayoutGrid, Check, ChevronLeft, TrendingDown, AlertCircle, Clock, CheckSquare, Target, Lightbulb, Users, Battery, Wifi, Signal } from 'lucide-react';
+
+const StatusBar = () => (
+  <div className={styles.statusBar}>
+    <span>9:41</span>
+    <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+      <Signal size={14} strokeWidth={3} />
+      <Wifi size={14} strokeWidth={3} />
+      <Battery size={16} strokeWidth={2} />
+    </div>
+  </div>
+);
 
 const ScreenAnalytics = () => (
   <div className={styles.appContent}>
     <div className={styles.appHeader}>
       <div className={styles.appHeaderLeft}>
-        <LayoutGrid size={18} /> Performance Analytics
+        <ChevronLeft size={20} strokeWidth={3} /> Performance Analytics
       </div>
       <div className={styles.premiumBadge}>
-        <Crown size={10} /> Premium
+        <Crown size={12} strokeWidth={3} /> Premium
       </div>
     </div>
 
@@ -27,44 +38,45 @@ const ScreenAnalytics = () => (
       </div>
       <div className={styles.scoreStats}>
         <div className={styles.statCol}>
-          <div className={styles.val} style={{ color: 'var(--green)' }}>101</div>
+          <div className={styles.val} style={{ color: '#10b981' }}>101</div>
           <div className={styles.lbl}>Correct</div>
-          <div className={styles.statPill} style={{ background: 'var(--green-bg)', color: 'var(--green)' }}>67.3%</div>
+          <div className={styles.statPill} style={{ background: 'rgba(16,185,129,0.1)', color: '#10b981' }}>67.3%</div>
         </div>
         <div className={styles.statCol}>
-          <div className={styles.val} style={{ color: '#E03131' }}>34</div>
+          <div className={styles.val} style={{ color: '#ef4444' }}>34</div>
           <div className={styles.lbl}>Wrong</div>
-          <div className={styles.statPill} style={{ background: '#FDF1F1', color: '#E03131' }}>-0.33 ea</div>
+          <div className={styles.statPill} style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444' }}>-0.33 ea</div>
         </div>
         <div className={styles.statCol}>
-          <div className={styles.val} style={{ color: '#F59F00' }}>15</div>
+          <div className={styles.val} style={{ color: '#f59e0b' }}>15</div>
           <div className={styles.lbl}>Skipped</div>
-          <div className={styles.statPill} style={{ background: 'var(--amber-bg)', color: '#F59F00' }}>no penalty</div>
+          <div className={styles.statPill} style={{ background: 'rgba(245,158,11,0.1)', color: '#f59e0b' }}>no penalty</div>
         </div>
       </div>
     </div>
 
     <div className={styles.purpleBox}>
-      <div className={styles.rankIcon}><LayoutGrid size={20} /></div>
+      <div className={styles.rankIcon}><LayoutGrid size={24} /></div>
       <div style={{ zIndex: 2 }}>
-        <div style={{ fontSize: 11, marginBottom: 2, opacity: 0.8 }}>Your rank among all test takers</div>
-        <div className={styles.rankNum}>#847 <span style={{ fontSize: 14, fontWeight: 500 }}>of 12,450</span></div>
+        <div style={{ fontSize: 13, marginBottom: 4, opacity: 0.9, fontWeight: 500 }}>Your rank among all test takers</div>
+        <div className={styles.rankNum}>#847 <span style={{ fontSize: 15, fontWeight: 600, opacity: 0.9 }}>of 12,450</span></div>
+        <div style={{ fontSize: 11, marginTop: 6, opacity: 0.8, fontWeight: 500 }}>Top 6.8% • Better than 93% of students</div>
       </div>
       <div className={styles.topPill}>Top 7%</div>
     </div>
 
     <div className={styles.grid2x2}>
       <div className={styles.miniCard}>
-        <div className={styles.miniHeader}><div className={styles.miniIcon} style={{ background: 'var(--green-bg)', color: 'var(--green)' }}><CheckSquare size={12} /></div> Accuracy</div>
+        <div className={styles.miniHeader}><div className={styles.miniIcon} style={{ background: 'rgba(16,185,129,0.1)', color: '#10b981' }}><Target size={14} strokeWidth={3} /></div> Accuracy</div>
         <div className={styles.miniVal}>74.8%</div>
         <div className={styles.miniSub}>Attempted only</div>
-        <div className={styles.miniBar}><div className={styles.miniBarFill} style={{ width: '74%', background: 'var(--green)' }} /></div>
+        <div className={styles.miniBar}><div className={styles.miniBarFill} style={{ width: '74%', background: '#10b981' }} /></div>
       </div>
       <div className={styles.miniCard}>
-        <div className={styles.miniHeader}><div className={styles.miniIcon} style={{ background: 'rgba(99,102,241,0.1)', color: '#6366f1' }}><Clock size={12} /></div> Avg. time/Q</div>
+        <div className={styles.miniHeader}><div className={styles.miniIcon} style={{ background: 'rgba(99,102,241,0.1)', color: '#4f46e5' }}><Clock size={14} strokeWidth={3} /></div> Avg. time/Q</div>
         <div className={styles.miniVal}>58s</div>
         <div className={styles.miniSub}>Ideal: 60s</div>
-        <div className={styles.miniBar}><div className={styles.miniBarFill} style={{ width: '80%', background: '#6366f1' }} /></div>
+        <div className={styles.miniBar}><div className={styles.miniBarFill} style={{ width: '80%', background: '#4f46e5' }} /></div>
       </div>
     </div>
   </div>
@@ -74,14 +86,14 @@ const ScreenSubject = () => (
   <div className={styles.appContent}>
     <div className={styles.appHeader}>
       <div className={styles.appHeaderLeft}>
-        <LayoutGrid size={18} /> Subject Analysis
+        <ChevronLeft size={20} strokeWidth={3} /> Subject Analysis
       </div>
       <div className={styles.premiumBadge}>
-        <Crown size={10} /> Premium
+        <Crown size={12} strokeWidth={3} /> Premium
       </div>
     </div>
 
-    <div style={{ fontSize: 16, fontWeight: 700, color: '#111', marginBottom: 12 }}>All subjects</div>
+    <div style={{ fontSize: 18, fontWeight: 800, color: '#111', marginBottom: 16, letterSpacing: '-0.5px' }}>All subjects</div>
     <div className={styles.appBox} style={{ padding: '8px 16px' }}>
       <div className={styles.subjRow}>
         <div className={styles.subjHead}>Subject</div>
@@ -90,47 +102,117 @@ const ScreenSubject = () => (
         <div className={styles.subjHead} style={{ textAlign: 'center' }}>Acc.</div>
       </div>
       <div className={styles.subjRow}>
-        <div><span className={styles.dot} style={{ background: '#4338ca' }}/> Polity</div>
+        <div><span className={styles.dot} style={{ background: '#4f46e5' }}/> Polity</div>
         <div style={{ textAlign: 'center' }}>28/35</div>
-        <div style={{ textAlign: 'center', color: '#E03131' }}>5</div>
-        <div style={{ textAlign: 'center' }}><div className={styles.accPill} style={{ background: 'var(--green-bg)', color: 'var(--green)' }}>80%</div></div>
+        <div style={{ textAlign: 'center', color: '#ef4444' }}>5</div>
+        <div style={{ textAlign: 'center' }}><div className={styles.accPill} style={{ background: 'rgba(16,185,129,0.1)', color: '#10b981' }}>80%</div></div>
       </div>
       <div className={styles.subjRow}>
-        <div><span className={styles.dot} style={{ background: 'var(--green)' }}/> History</div>
+        <div><span className={styles.dot} style={{ background: '#10b981' }}/> History</div>
         <div style={{ textAlign: 'center' }}>22/30</div>
-        <div style={{ textAlign: 'center', color: '#E03131' }}>6</div>
-        <div style={{ textAlign: 'center' }}><div className={styles.accPill} style={{ background: 'var(--green-bg)', color: 'var(--green)' }}>73%</div></div>
+        <div style={{ textAlign: 'center', color: '#ef4444' }}>6</div>
+        <div style={{ textAlign: 'center' }}><div className={styles.accPill} style={{ background: 'rgba(16,185,129,0.1)', color: '#10b981' }}>73%</div></div>
       </div>
       <div className={styles.subjRow}>
-        <div><span className={styles.dot} style={{ background: '#F59F00' }}/> Economy</div>
+        <div><span className={styles.dot} style={{ background: '#f59e0b' }}/> Geography</div>
+        <div style={{ textAlign: 'center' }}>24/30</div>
+        <div style={{ textAlign: 'center', color: '#ef4444' }}>4</div>
+        <div style={{ textAlign: 'center' }}><div className={styles.accPill} style={{ background: 'rgba(16,185,129,0.1)', color: '#10b981' }}>80%</div></div>
+      </div>
+      <div className={styles.subjRow}>
+        <div><span className={styles.dot} style={{ background: '#ef4444' }}/> Economy</div>
         <div style={{ textAlign: 'center' }}>18/30</div>
-        <div style={{ textAlign: 'center', color: '#E03131' }}>10</div>
-        <div style={{ textAlign: 'center' }}><div className={styles.accPill} style={{ background: 'var(--amber-bg)', color: '#F59F00' }}>60%</div></div>
+        <div style={{ textAlign: 'center', color: '#ef4444' }}>10</div>
+        <div style={{ textAlign: 'center' }}><div className={styles.accPill} style={{ background: 'rgba(245,158,11,0.1)', color: '#f59e0b' }}>60%</div></div>
       </div>
       <div className={styles.subjRow}>
-        <div><span className={styles.dot} style={{ background: '#6366f1' }}/> Science</div>
+        <div><span className={styles.dot} style={{ background: '#a855f7' }}/> Science</div>
         <div style={{ textAlign: 'center' }}>16/20</div>
-        <div style={{ textAlign: 'center', color: '#E03131' }}>3</div>
-        <div style={{ textAlign: 'center' }}><div className={styles.accPill} style={{ background: 'var(--green-bg)', color: 'var(--green)' }}>80%</div></div>
+        <div style={{ textAlign: 'center', color: '#ef4444' }}>3</div>
+        <div style={{ textAlign: 'center' }}><div className={styles.accPill} style={{ background: 'rgba(16,185,129,0.1)', color: '#10b981' }}>80%</div></div>
+      </div>
+      <div className={styles.subjRow}>
+        <div><span className={styles.dot} style={{ background: '#10b981' }}/> Environment</div>
+        <div style={{ textAlign: 'center' }}>10/5</div>
+        <div style={{ textAlign: 'center', color: '#ef4444' }}>6</div>
+        <div style={{ textAlign: 'center' }}><div className={styles.accPill} style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444' }}>40%</div></div>
       </div>
     </div>
 
-    <div style={{ fontSize: 16, fontWeight: 700, color: '#111', margin: '24px 0 12px' }}>Difficulty performance</div>
+    <div style={{ fontSize: 18, fontWeight: 800, color: '#111', margin: '32px 0 16px', letterSpacing: '-0.5px' }}>Difficulty performance</div>
     <div className={styles.diffGrid}>
       <div className={styles.diffCard}>
-        <div className={styles.diffDonut} style={{ background: 'conic-gradient(var(--green) 85%, #eee 0)' }}><div className={styles.diffInner} style={{ color: 'var(--green)' }}>85%</div></div>
+        <div className={styles.diffDonut} style={{ background: 'conic-gradient(#10b981 85%, #f4f4f4 0)' }}><div className={styles.diffInner} style={{ color: '#10b981' }}>85%</div></div>
         <div className={styles.diffLbl}>Easy</div>
         <div className={styles.diffSub}>34/40 right</div>
       </div>
       <div className={styles.diffCard}>
-        <div className={styles.diffDonut} style={{ background: 'conic-gradient(#F59F00 70%, #eee 0)' }}><div className={styles.diffInner} style={{ color: '#F59F00' }}>70%</div></div>
+        <div className={styles.diffDonut} style={{ background: 'conic-gradient(#f59e0b 70%, #f4f4f4 0)' }}><div className={styles.diffInner} style={{ color: '#f59e0b' }}>70%</div></div>
         <div className={styles.diffLbl}>Medium</div>
         <div className={styles.diffSub}>42/60 right</div>
       </div>
       <div className={styles.diffCard}>
-        <div className={styles.diffDonut} style={{ background: 'conic-gradient(#E03131 40%, #eee 0)' }}><div className={styles.diffInner} style={{ color: '#E03131' }}>40%</div></div>
+        <div className={styles.diffDonut} style={{ background: 'conic-gradient(#ef4444 40%, #f4f4f4 0)' }}><div className={styles.diffInner} style={{ color: '#ef4444' }}>40%</div></div>
         <div className={styles.diffLbl}>Hard</div>
         <div className={styles.diffSub}>20/50 right</div>
+      </div>
+    </div>
+  </div>
+);
+
+const ScreenDetailed = () => (
+  <div className={styles.appContent}>
+    <div className={styles.appHeader}>
+      <div className={styles.appHeaderLeft}>
+        <ChevronLeft size={20} strokeWidth={3} /> Detailed Review
+      </div>
+      <div className={styles.premiumBadge}>
+        <Crown size={12} strokeWidth={3} /> Premium
+      </div>
+    </div>
+
+    <div className={styles.tabs}>
+      <div className={`${styles.tab} ${styles.active}`}>All (150)</div>
+      <div className={`${styles.tab} ${styles.correct}`}>Correct (101)</div>
+      <div className={`${styles.tab} ${styles.wrong}`}>Wrong (34)</div>
+      <div className={`${styles.tab} ${styles.skipped}`}>Skipped</div>
+    </div>
+
+    <div className={styles.qCard}>
+      <div className={styles.qHead}>
+        <div className={styles.qNum}>QUESTION 1 • HISTORY</div>
+        <div className={styles.qStatus} style={{ background: 'rgba(16,185,129,0.1)', color: '#10b981' }}>CORRECT</div>
+      </div>
+      <div className={styles.qText}>In the context of the historical schisms within Jainism, which group completely rejected image worship and temple rituals?</div>
+      
+      <div className={styles.opt}><div className={styles.optLetter}>A</div></div>
+      <div className={`${styles.opt} ${styles.correct}`}>
+        <div className={styles.optLetter}>B</div> Sthanakvasis and Terapanthis <Check size={18} style={{marginLeft: 'auto'}} />
+      </div>
+      <div className={styles.opt}><div className={styles.optLetter}>C</div></div>
+      <div className={styles.opt}><div className={styles.optLetter}>D</div></div>
+
+      <div className={styles.qTags}>
+        <div className={styles.qTag}><Clock size={12} /> 42 sec</div>
+        <div className={styles.qTag}><Target size={12} /> Easy</div>
+        <div className={styles.qTag}><Users size={12} /> 68% got this right</div>
+      </div>
+
+      <div className={styles.expl}>
+        <div className={styles.explTitle}><Lightbulb size={14} strokeWidth={3} /> Explanation</div>
+        <div className={styles.explText}>The Sthanakvasi sect (an offshoot of Shvetambara founded by Lavaji) and the Terapanth sect completely reject iconolatry and temples. They perform duties in simple halls called Sthanakas, emphasising mental purity and scriptural study.</div>
+      </div>
+    </div>
+
+    <div className={styles.qCard}>
+      <div className={styles.qHead}>
+        <div className={styles.qNum}>QUESTION 2 • ECONOMY</div>
+        <div className={styles.qStatus} style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444' }}>INCORRECT</div>
+      </div>
+      <div className={styles.qText}>Match the following historical events with the Five Year Plans under which they occurred.</div>
+      
+      <div className={`${styles.opt} ${styles.wrong}`}>
+        <div className={styles.optLetter}>A</div> Your answer — Option A
       </div>
     </div>
   </div>
@@ -140,10 +222,10 @@ const ScreenAI = () => (
   <div className={styles.appContent}>
     <div className={styles.appHeader}>
       <div className={styles.appHeaderLeft}>
-        AI Insights
+        <ChevronLeft size={20} strokeWidth={3} /> AI Insights
       </div>
       <div className={styles.premiumBadge}>
-        <Crown size={10} /> Premium
+        <Crown size={12} strokeWidth={3} /> Premium
       </div>
     </div>
 
@@ -154,160 +236,33 @@ const ScreenAI = () => (
       </div>
     </div>
 
-    <div style={{ fontSize: 16, fontWeight: 700, color: '#111', margin: '24px 0 12px' }}>What to focus on next</div>
+    <div style={{ fontSize: 18, fontWeight: 800, color: '#111', margin: '32px 0 16px', letterSpacing: '-0.5px' }}>What to focus on next</div>
     <div className={styles.focusList}>
       <div className={styles.focusCard}>
-        <div className={styles.fIcon} style={{ background: '#FDF1F1', color: '#E03131' }}><TrendingDown size={16} /></div>
+        <div className={styles.fIcon} style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444' }}><TrendingDown size={18} strokeWidth={3} /></div>
         <div>
           <div className={styles.fTitle}>Critical gap — Indian Economy</div>
-          <div className={styles.fDesc}>You got only 60% in Economy (18/30). Wrong answers: GDP calculation, Budget concepts. Focus 1 hour daily here.</div>
+          <div className={styles.fDesc}>You got only 60% in Economy (18/30). Wrong answers: GDP calculation, Budget concepts, RBI monetary policy. These 3 topics alone cost you ~8 marks. Focus 1 hour daily on these until 80%+.</div>
         </div>
       </div>
       <div className={styles.focusCard}>
-        <div className={styles.fIcon} style={{ background: 'var(--amber-bg)', color: '#F59F00' }}><Clock size={16} /></div>
+        <div className={styles.fIcon} style={{ background: 'rgba(245,158,11,0.1)', color: '#f59e0b' }}><Clock size={18} strokeWidth={3} /></div>
         <div>
           <div className={styles.fTitle}>Time management issue detected</div>
-          <div className={styles.fDesc}>You spent avg 1m 48s on hard questions vs ideal 75s. Practice timed sets to build speed.</div>
+          <div className={styles.fDesc}>You spent avg 1m 48s on hard questions vs ideal 75s. In the last 30 min you attempted only 12 questions. Practice timed sets of 30 questions in 25 minutes to build speed.</div>
         </div>
       </div>
       <div className={styles.focusCard}>
-        <div className={styles.fIcon} style={{ background: 'rgba(99,102,241,0.1)', color: '#6366f1' }}><AlertCircle size={16} /></div>
+        <div className={styles.fIcon} style={{ background: 'rgba(99,102,241,0.1)', color: '#4f46e5' }}><AlertCircle size={18} strokeWidth={3} /></div>
         <div>
           <div className={styles.fTitle}>Careless errors in Polity</div>
-          <div className={styles.fDesc}>3 of your 5 wrong Polity answers were answered correctly by 72%+ of students. Re-read questions carefully.</div>
+          <div className={styles.fDesc}>3 of your 5 wrong Polity answers were questions where 72%+ of students answered correctly. These are careless misreads, not knowledge gaps. Re-read questions twice before answering.</div>
         </div>
       </div>
     </div>
   </div>
 );
 
-const ScreenPredictor = () => (
-  <div className={styles.appContent}>
-    <div className={styles.appHeader}>
-      <div className={styles.appHeaderLeft}>
-        Rank Predictor
-      </div>
-      <div className={styles.premiumBadge}>
-        <Crown size={10} /> Premium
-      </div>
-    </div>
-
-    <div className={styles.darkCard}>
-      <div className={styles.darkTitle}>Predicted APPSC Group-1 Score</div>
-      <div className={styles.predScore}>127-135</div>
-      <div className={styles.predSub}>Based on your performance trend across 12 tests</div>
-      
-      <div className={styles.predBarRow}>
-        <div style={{ width: 60 }}>Polity</div>
-        <div className={styles.predBarWrap}><div className={styles.predBarFill} style={{ width: '85%' }}/></div>
-        <div style={{ width: 30, textAlign: 'right' }}>85%</div>
-      </div>
-      <div className={styles.predBarRow}>
-        <div style={{ width: 60 }}>History</div>
-        <div className={styles.predBarWrap}><div className={styles.predBarFill} style={{ width: '76%' }}/></div>
-        <div style={{ width: 30, textAlign: 'right' }}>76%</div>
-      </div>
-      <div className={styles.predBarRow}>
-        <div style={{ width: 60 }}>Economy</div>
-        <div className={styles.predBarWrap}><div className={styles.predBarFill} style={{ width: '67%', background: '#F59F00' }}/></div>
-        <div style={{ width: 30, textAlign: 'right' }}>67%</div>
-      </div>
-    </div>
-
-    <div style={{ fontSize: 16, fontWeight: 700, color: '#111', margin: '24px 0 12px' }}>Rank scenarios</div>
-    
-    <div className={styles.scenarioCard} style={{ borderColor: '#FDF1F1' }}>
-      <div className={styles.sIcon} style={{ background: '#FDF1F1', color: '#E03131' }}><TrendingDown size={16} /></div>
-      <div className={styles.sText}>
-        <div className={styles.sLbl}>Worst case — if nothing improves</div>
-        <div className={styles.sVal}>Score: 110-115</div>
-      </div>
-      <div className={styles.sRank} style={{ color: '#E03131' }}>#1,200</div>
-    </div>
-    
-    <div className={styles.scenarioCard} style={{ borderColor: '#6366f1', boxShadow: '0 4px 12px rgba(99,102,241,0.1)' }}>
-      <div className={styles.sIcon} style={{ background: 'rgba(99,102,241,0.1)', color: '#6366f1' }}><TrendingUp size={16} /></div>
-      <div className={styles.sText}>
-        <div className={styles.sLbl} style={{ color: '#6366f1' }}>Current trajectory (realistic)</div>
-        <div className={styles.sVal}>Score: 127-135</div>
-      </div>
-      <div className={styles.sRank} style={{ color: '#6366f1' }}>#400-600</div>
-    </div>
-
-    <div className={styles.scenarioCard} style={{ borderColor: 'var(--green-bg)' }}>
-      <div className={styles.sIcon} style={{ background: 'var(--green-bg)', color: 'var(--green)' }}><TrendingUp size={16} /></div>
-      <div className={styles.sText}>
-        <div className={styles.sLbl}>Best case — fix Economy + speed</div>
-        <div className={styles.sVal}>Score: 135-142</div>
-      </div>
-      <div className={styles.sRank} style={{ color: 'var(--green)' }}>#100-200</div>
-    </div>
-  </div>
-);
-
-const ScreenSyllabus = () => (
-  <div className={styles.appContent} style={{ padding: 0, background: '#fff' }}>
-    <div className={styles.appHeader} style={{ padding: '20px 20px 10px', margin: 0 }}>
-      <div className={styles.appHeaderLeft}>
-        <div>
-          <div style={{ fontSize: 16 }}>Syllabus Tracker</div>
-          <div style={{ fontSize: 11, color: '#888', fontWeight: 500, marginTop: 2 }}>Check off topics as you learn</div>
-        </div>
-      </div>
-    </div>
-
-    <div style={{ borderTop: '1px solid #eee' }}>
-      <div className={styles.sylCard}>
-        <div className={styles.sylTitle}><ChevronDown size={14} color="#888" /> Indian Polity & Governance</div>
-        <div className={styles.sylRight}>
-          0% <div className={styles.sylBar}><div style={{ width: '0%', height: '100%', background: '#4338ca', borderRadius: 2 }}/></div>
-        </div>
-      </div>
-      
-      <div className={styles.sylSubCard}>
-        <div className={styles.sylTitle} style={{ fontSize: 12 }}><ChevronDown size={14} color="#888" /> Constitutional Framework</div>
-        <div className={styles.sylRight}>
-          1% <div className={styles.sylBar}><div style={{ width: '1%', height: '100%', background: '#4338ca', borderRadius: 2 }}/></div>
-        </div>
-      </div>
-
-      <div className={styles.sylSubCard} style={{ paddingLeft: 48, background: '#F9F8F5' }}>
-        <div className={styles.sylTitle} style={{ fontSize: 12 }}><ChevronDown size={14} color="#888" /> Historical Background</div>
-        <div className={styles.sylRight}>
-          11% <div className={styles.sylBar}><div style={{ width: '11%', height: '100%', background: '#4338ca', borderRadius: 2 }}/></div>
-        </div>
-      </div>
-
-      <div className={styles.sylItem}>
-        <div className={styles.sylTitle} style={{ fontSize: 12, fontWeight: 500, color: '#555' }}><ChevronRight size={14} color="#888" /> Company Rule & Crown Rule</div>
-        <div className={styles.sylRight} style={{ marginLeft: 'auto' }}>
-          0% <div className={styles.sylBar}><div style={{ width: '0%', height: '100%', background: '#4338ca', borderRadius: 2 }}/></div>
-        </div>
-      </div>
-
-      <div className={styles.sylSubCard} style={{ paddingLeft: 48, background: '#F9F8F5' }}>
-        <div className={styles.sylTitle} style={{ fontSize: 12 }}><ChevronDown size={14} color="#888" /> Features & Governance Models</div>
-        <div className={styles.sylRight}>
-          25% <div className={styles.sylBar}><div style={{ width: '25%', height: '100%', background: '#4338ca', borderRadius: 2 }}/></div>
-        </div>
-      </div>
-      
-      <div className={styles.sylItem} style={{ paddingLeft: 64, background: '#f4f4f4' }}>
-        <div className={`${styles.check} ${styles.active}`}><Check size={12} strokeWidth={3} /></div>
-        <div className={`${styles.sylItemText} ${styles.done}`}>Unitary Features vs. Federal Features within the Constitutional Matrix</div>
-      </div>
-      <div className={styles.sylItem} style={{ paddingLeft: 64, background: '#f4f4f4' }}>
-        <div className={styles.check}></div>
-        <div className={styles.sylItemText}>Parliamentary Form of Government</div>
-      </div>
-      <div className={styles.sylItem} style={{ paddingLeft: 64, background: '#f4f4f4' }}>
-        <div className={styles.check}></div>
-        <div className={styles.sylItemText}>Presidential Form of Government</div>
-      </div>
-
-    </div>
-  </div>
-);
 
 const screens = [
   {
@@ -324,27 +279,40 @@ const screens = [
   },
   {
     id: 3,
-    title: 'AI Insights',
-    desc: 'Get personalized feedback on what to focus on to improve.',
-    component: <ScreenAI />
+    title: 'Detailed Review',
+    desc: 'Review every question with rich explanations and peer stats.',
+    component: <ScreenDetailed />
   },
   {
     id: 4,
-    title: 'AI Rank Predictor',
-    desc: 'Predict your final APPSC rank based on current trajectory.',
-    component: <ScreenPredictor />
-  },
-  {
-    id: 5,
-    title: 'Syllabus Tracker',
-    desc: 'Check off topics as you learn and track completion visually.',
-    component: <ScreenSyllabus />
-  },
+    title: 'AI Insights',
+    desc: 'Get personalized feedback on what to focus on to improve.',
+    component: <ScreenAI />
+  }
 ];
 
 const AppShowcase: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Enable horizontal scrolling with vertical mouse wheel
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        el.scrollLeft += e.deltaY;
+      }
+    };
+
+    // Use non-passive listener to allow preventDefault
+    el.addEventListener('wheel', handleWheel, { passive: false });
+    return () => el.removeEventListener('wheel', handleWheel);
+  }, []);
+
   return (
-    <section className={`section-pad ${styles.showcase}`} id="app-showcase">
+    <section className={styles.showcase} id="app-showcase">
       <div className={styles.head}>
         <div className="section-label">Inside the App</div>
         <h2>Designed to give you<br/>the winning edge.</h2>
@@ -353,15 +321,12 @@ const AppShowcase: React.FC = () => {
         </p>
       </div>
 
-      <div className={styles.scrollContainer}>
+      <div className={styles.scrollContainer} ref={scrollRef}>
         {screens.map((screen) => (
           <div key={screen.id} className={styles.phoneWrapper}>
             <div className={styles.phoneFrame}>
               <div className={styles.screen}>
-                <div className={styles.statusBar}>
-                  <span>9:41</span>
-                  <span>LTE</span>
-                </div>
+                <StatusBar />
                 {screen.component}
               </div>
             </div>
