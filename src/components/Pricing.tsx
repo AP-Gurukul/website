@@ -29,7 +29,7 @@ const Pricing: React.FC = () => {
             <div className={styles.feature}><CheckCircle2 size={16} className={styles.check} /> 1 mock test per month</div>
           </div>
           
-          <a href="#" className={styles.btn}>Get started</a>
+          <a href="#waitlist" className={styles.btn}>Get started</a>
         </div>
 
         {/* Pro Plan */}
@@ -50,7 +50,7 @@ const Pricing: React.FC = () => {
             <div className={styles.feature}><CheckCircle2 size={16} className={styles.checkFeatured} /> Bookmarks & sync</div>
           </div>
           
-          <a href="#" className={styles.btnFeatured}>Start free trial</a>
+          <a href="#waitlist" className={styles.btnFeatured}>Start free trial</a>
         </div>
 
         {/* Annual Plan */}
@@ -69,7 +69,7 @@ const Pricing: React.FC = () => {
             <div className={styles.feature}><CheckCircle2 size={16} className={styles.check} /> Doubt support</div>
           </div>
           
-          <a href="#" className={styles.btn}>Get annual plan</a>
+          <a href="#waitlist" className={styles.btn}>Get annual plan</a>
         </div>
 
       </div>

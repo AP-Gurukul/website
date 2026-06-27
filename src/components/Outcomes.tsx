@@ -7,7 +7,7 @@ const Outcomes: React.FC = () => {
       <div className="section-label" style={{ color: 'rgba(255, 255, 255, 0.4)' }}>Outcomes</div>
       <h2>Numbers that speak.</h2>
       <p className="section-sub" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
-        Measurable results from Group 1 & 2 aspirants who committed to daily practice with APPSC Sadhana.
+        Measurable results from Group 1 & 2 aspirants who committed to daily practice with Sadhana APPSC.
       </p>
 
       <div className={styles.grid}>
