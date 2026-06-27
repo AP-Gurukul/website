@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './HowItWorks.module.css';
 import { ArrowRight } from 'lucide-react';
 

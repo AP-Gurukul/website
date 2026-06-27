@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <a href="#" className={styles.logo} onClick={(e) => handleSmoothScroll(e, 'hero')}>
         <span className={styles.logoDot}></span>
-        <span className={styles.logoText}>APPSC Sadhana</span>
+        <span className={styles.logoText}>Sadhana APPSC</span>
       </a>
 
       <div className={`${styles.links} ${isMobileOpen ? styles.active : ''}`}>

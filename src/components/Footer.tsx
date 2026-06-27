@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './Footer.module.css';
 
 const Footer: React.FC = () => {
@@ -8,7 +9,7 @@ const Footer: React.FC = () => {
         <div className={styles.brand}>
           <div className={styles.logo}>
             <span className={styles.logoDot}></span>
-            <span className={styles.logoText}>APPSC Sadhana</span>
+            <span className={styles.logoText}>Sadhana APPSC</span>
           </div>
           <p className={styles.tagline}>
             The ultra-premium preparation app for APPSC Group 1 and 2 aspirants.
@@ -45,8 +46,7 @@ const Footer: React.FC = () => {
       </div>
       
       <div className={styles.bottom}>
-        <p>&copy; {new Date().getFullYear()} APPSC Sadhana. All rights reserved.</p>
-        <p>Built for Andhra Pradesh.</p>
+        <p>Copyright &copy; {new Date().getFullYear()} sadhanaappsc.in - All Rights Reserved.</p>
       </div>
     </footer>
   );

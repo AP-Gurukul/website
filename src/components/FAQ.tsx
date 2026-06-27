@@ -5,7 +5,7 @@ import { Plus, Minus } from 'lucide-react';
 const faqs = [
   {
     question: "Which APPSC exams does the app cover?",
-    answer: "APPSC Sadhana is currently laser-focused on Group 1 and Group 2 exams. The syllabus, mock tests, and question banks are perfectly aligned with the latest APPSC notifications for these specific groups."
+    answer: "Sadhana APPSC is currently laser-focused on Group 1 and Group 2 exams. The syllabus, mock tests, and question banks are perfectly aligned with the latest APPSC notifications for these specific groups."
   },
   {
     question: "Is the content in Telugu or English?",
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     question: "Is there a refund policy?",
-    answer: "Yes, we offer a full refund within 7 days of purchasing any paid plan, no questions asked."
+    answer: "All sales are final. Since our content is digital, we do not offer refunds once a purchase is made. You can cancel auto-renewal of subscriptions at any time."
   }
 ];
 
