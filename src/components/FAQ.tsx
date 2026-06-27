@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './FAQ.module.css';
 import { Plus, Minus } from 'lucide-react';
 

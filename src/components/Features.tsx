@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './Features.module.css';
 import { Book, Clock, BarChart2, Lightbulb, CheckSquare, FileText } from 'lucide-react';
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './LivePreview.module.css';
 import { ArrowRight, Clock, Info, Check } from 'lucide-react';
 

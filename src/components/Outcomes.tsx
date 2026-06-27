@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './Outcomes.module.css';
 
 const Outcomes: React.FC = () => {

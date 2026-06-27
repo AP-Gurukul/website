@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './Marquee.module.css';
 
 const exams = [
