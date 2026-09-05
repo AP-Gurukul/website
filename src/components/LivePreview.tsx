@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './LivePreview.module.css';
 import { ArrowRight, Clock, Info, Check } from 'lucide-react';
+import { BOT_URL } from '../config';
 
 const quizQuestions = [
   {
@@ -114,8 +115,8 @@ const LivePreview: React.FC = () => {
           <p>
             Every question is sourced from previous papers or crafted by subject experts to match APPSC Group 1 & 2 difficulty. Explanations are clear, concise, and focused on building concepts.
           </p>
-          <a href="#cta" className={styles.btnPrimary}>
-            Try a free test <ArrowRight size={16} />
+          <a href={BOT_URL} target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>
+            Join on Telegram <ArrowRight size={16} />
           </a>
         </div>
 

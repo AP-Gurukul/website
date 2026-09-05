@@ -39,20 +39,20 @@ const Hero: React.FC = () => {
 
         <div className={`${styles.stats} animate-fade-in-up`} style={{ animationDelay: '0.5s' }}>
           <div className={styles.stat}>
-            <span className={styles.statNum}>50K+</span>
-            <span className={styles.statLabel}>Questions in bank</span>
+            <span className={styles.statNum}>Daily</span>
+            <span className={styles.statLabel}>New questions posted</span>
           </div>
           <div className={styles.stat}>
-            <span className={styles.statNum}>12</span>
-            <span className={styles.statLabel}>Core Subjects</span>
+            <span className={styles.statNum}>G1 &amp; G2</span>
+            <span className={styles.statLabel}>Groups covered</span>
           </div>
           <div className={styles.stat}>
-            <span className={styles.statNum}>8,200+</span>
-            <span className={styles.statLabel}>Active students</span>
+            <span className={styles.statNum}>Every Q</span>
+            <span className={styles.statLabel}>With a full explanation</span>
           </div>
           <div className={styles.stat}>
-            <span className={styles.statNum}>91%</span>
-            <span className={styles.statLabel}>Accuracy improvement</span>
+            <span className={styles.statNum}>₹249</span>
+            <span className={styles.statLabel}>Per month, cancel anytime</span>
           </div>
         </div>
 
