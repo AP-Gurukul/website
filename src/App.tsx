@@ -6,8 +6,6 @@ import Features from './components/Features';
 import Subjects from './components/Subjects';
 import HowItWorks from './components/HowItWorks';
 import LivePreview from './components/LivePreview';
-import AppShowcase from './components/AppShowcase';
-import Outcomes from './components/Outcomes';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
@@ -65,8 +63,6 @@ function App() {
       <Subjects />
       <HowItWorks />
       <LivePreview />
-      <AppShowcase />
-      <Outcomes />
       <Pricing />
       <FAQ />
       <CTA />

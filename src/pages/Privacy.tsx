@@ -1,100 +1,133 @@
 import React from 'react';
+import { CONTACT } from '../config';
+
+// Rewritten to describe the data this service actually handles.
+//
+// The previous version was a mobile-app template: it said we collect your
+// device's IP address and the pages you visit, listed Google Play Services,
+// AdMob and Firebase Crashlytics as data recipients, and told users to uninstall
+// the app to stop collection. We do none of those things and there is no app to
+// uninstall. A privacy policy describing collection that does not happen is
+// worse than none — it is a promise about the wrong thing.
+//
+// What we actually hold: a Telegram ID, which pass was bought, when it expires,
+// and Razorpay's payment reference.
 
 const Privacy: React.FC = () => {
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '120px 20px 80px', lineHeight: 1.6, color: '#333' }}>
       <h1 style={{ fontSize: 36, marginBottom: 8, letterSpacing: '-1px' }}>Privacy Policy</h1>
-      <p style={{ color: '#666', marginBottom: 40 }}>Effective as of 2026-06-23</p>
+      <p style={{ color: '#666', marginBottom: 40 }}>Effective as of 2026-09-05</p>
 
-      <p>This privacy policy applies to the Sadhana APPSC app for mobile devices and web browsers, together with any related services operated by Praneeth (collectively, the "Application"). Praneeth is hereby referred to as the "Service Provider".</p>
+      <p>
+        This policy explains what {CONTACT.name} (the &quot;Service Provider&quot;, &quot;we&quot;)
+        collects when you use the Sadhana APPSC website and our private Telegram study group, why we
+        hold it, and what you can ask us to do with it.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Information Collection and Use</h2>
-      <p>The Application collects information when you download and use it. This information may include information such as:</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>In short</h2>
+      <p>
+        We store the minimum needed to give you what you paid for: your Telegram ID, which pass you
+        bought, and when it ends. <strong>We never see or store your card, UPI or bank details</strong> —
+        those go directly to Razorpay. We do not sell your data to anyone.
+      </p>
+
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>What we collect</h2>
       <ul style={{ paddingLeft: 24, marginBottom: 16 }}>
-        <li>Your device's Internet Protocol address</li>
-        <li>The pages of the Application that you visit, the time and date of your visit, the time spent on those pages</li>
-        <li>The time spent on the Application</li>
-        <li>Your operating system you use</li>
+        <li><strong>Telegram ID and username.</strong> Telegram provides these when you message our bot. We need your ID to add you to the group and to know when your access ends.</li>
+        <li><strong>Your name, if you have set one on Telegram.</strong> Used only to address you in messages.</li>
+        <li><strong>Payment records.</strong> The amount, the pass bought, the date, and Razorpay&apos;s payment reference — our record of the sale, kept for accounting and tax.</li>
+        <li><strong>Correspondence.</strong> If you email us, we keep that exchange so we can follow it up.</li>
       </ul>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Cookies and tracking technologies</h2>
-      <p>The Application or its third-party SDKs may use cookies, SDKs, pixels, and similar technologies to support functionality, analytics, or service delivery. Where required by applicable law, the Service Provider will obtain consent before using non-essential tracking technologies.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>What we do not collect</h2>
+      <p>
+        Card numbers, CVV, UPI PIN, bank login details, or any other payment credential. These are
+        entered on Razorpay&apos;s own secure checkout and are never transmitted to or stored by us.
+      </p>
+      <p>
+        We do not run advertising networks, behavioural tracking, or analytics that profile you
+        across other services.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Your Rights</h2>
-      <p>You may request access to, correction of, or deletion of your personal data held by the Service Provider. To exercise these rights, or to withdraw consent where processing is based on consent, contact the Service Provider at <strong>appscsadhana@gmail.com</strong>.</p>
-
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Your California privacy rights (CCPA/CPRA)</h2>
-      <p>If you are a California resident, you have the right to know what personal information is collected, the right to delete personal information, the right to opt out of the sale or sharing of personal information, and the right to non-discrimination for exercising these rights. To exercise your CCPA/CPRA rights, contact the Service Provider at <strong>appscsadhana@gmail.com</strong>.</p>
-
-      <p>The Service Provider may use the information you provide to send important information, required notices, and, where permitted by law, marketing communications.</p>
-
-      <p>For a better experience while using the Application, the Service Provider may require you to provide certain personally identifiable information, including but not limited to Email. The information the Service Provider requests will be retained and used as described in this privacy policy.</p>
-
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Third Party Access</h2>
-      <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement.</p>
-
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>International Data Transfers</h2>
-      <p>The Service Provider or its third-party service providers may transfer personal data to countries outside your country of residence, including outside the European Economic Area (EEA). Where applicable law requires safeguards for international transfers, the Service Provider will use appropriate mechanisms.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Why we hold it</h2>
       <ul style={{ paddingLeft: 24, marginBottom: 16 }}>
-        <li>Standard Contractual Clauses (SCCs) approved by the European Commission</li>
-        <li>Adequacy decisions or other legally recognized transfer mechanisms</li>
-        <li>Your consent, where required and legally permitted</li>
+        <li>To grant, extend and end your access to the private group.</li>
+        <li>To send your invite link and remind you before a pass expires.</li>
+        <li>To answer questions and resolve billing errors.</li>
+        <li>To keep records required by Indian tax and accounting law.</li>
       </ul>
 
-      <p>Data protection laws in other countries may differ from those in your jurisdiction. Where required by law, the Service Provider will apply appropriate safeguards and obtain any consent required for the transfer.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Where it is stored</h2>
+      <p>
+        Subscriber and payment records are held in a private Google Sheet reachable only over an
+        authenticated connection. Access to our administrative tools requires a verified sign-in and
+        is restricted to named curators.
+      </p>
 
-      <p>Please note that the Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the Privacy Policy of the third-party service providers used by the Application:</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Who we share it with</h2>
+      <p>We share data only with the services needed to run this, and only what each one needs:</p>
       <ul style={{ paddingLeft: 24, marginBottom: 16 }}>
-        <li>Google Play Services</li>
-        <li>AdMob</li>
-        <li>Google Analytics for Firebase</li>
-        <li>Firebase Crashlytics</li>
+        <li><strong>Razorpay</strong> — to take payments and process any billing correction. Governed by Razorpay&apos;s own privacy policy.</li>
+        <li><strong>Telegram</strong> — to message you and manage group membership. Governed by Telegram&apos;s privacy policy.</li>
+        <li><strong>Google</strong> — for the private spreadsheet holding our records.</li>
       </ul>
+      <p>
+        We do not sell, rent or trade your data. We disclose it otherwise only where the law requires
+        it.
+      </p>
 
-      <p>The Service Provider may disclose User Provided and Automatically Collected Information:</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>How long we keep it</h2>
+      <p>
+        Membership records are kept while your pass is active and for a reasonable period afterwards,
+        so you can rejoin or query a payment. Payment records are kept for as long as tax law
+        requires. You can ask us to delete anything we are not legally required to keep.
+      </p>
+
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Your rights</h2>
+      <p>You may ask us to:</p>
       <ul style={{ paddingLeft: 24, marginBottom: 16 }}>
-        <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
-        <li>when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;</li>
-        <li>with their trusted services providers who work on their behalf, do not have an independent use of the information the Service Provider discloses to them, and have agreed to adhere to the rules set forth in this privacy statement.</li>
+        <li>Tell you what data we hold about you.</li>
+        <li>Correct anything that is wrong.</li>
+        <li>Delete your data, where we are not legally required to keep it.</li>
+        <li>Stop messaging you — though this ends the service you paid for, and no refund arises.</li>
       </ul>
-
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Opt-Out Rights</h2>
-      <p>You can stop further collection of information from your mobile device or computer by uninstalling the Application. Uninstalling will stop the Application from collecting data from your device, but it does not automatically delete information that has already been transmitted to the Service Provider or to third parties.</p>
-
-      <p>To request deletion of your personal data, to withdraw consent, or to exercise any of your rights, contact the Service Provider at <strong>appscsadhana@gmail.com</strong>.</p>
-
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Data Retention Policy</h2>
-      <p>The Service Provider retains personal data based on its necessity for the stated purposes:</p>
-      <ul style={{ paddingLeft: 24, marginBottom: 16 }}>
-        <li>User Provided Data: Retained for the duration of your use of the Application plus 12 months thereafter, unless longer retention is required by law</li>
-        <li>Automatically Collected Data: Retained for up to 24 months from collection, unless longer retention is required for legal compliance</li>
-        <li>Aggregated and Anonymized Data: Retained indefinitely as it no longer identifies you</li>
-        <li>Data required for legal compliance: Retained as long as required by applicable law</li>
-      </ul>
-
-      <p>You may request deletion of your personal data, subject to any legal obligation to retain it. If you want the Service Provider to delete User Provided Data submitted through the Application, please contact them at <strong>appscsadhana@gmail.com</strong>. Please note that some User Provided Data may be required for the Application to function properly.</p>
+      <p>Email <strong>{CONTACT.email}</strong> and we will respond within 7 working days.</p>
 
       <h2 style={{ marginTop: 32, marginBottom: 16 }}>Children</h2>
-      <p>The Application is not intended for children under 19 years of age, or such higher age as required by applicable law. The Service Provider does not knowingly solicit data from children or market the Application to them.</p>
+      <p>
+        The Service is intended for candidates preparing for a competitive examination and is not
+        directed at children. We do not knowingly collect data from children. If you believe a child
+        has given us personal information, contact us at <strong>{CONTACT.email}</strong> and we will
+        delete it.
+      </p>
 
-      <p>Where parental or guardian consent is required under applicable law, the Application is not intended for use without that consent. The Service Provider does not knowingly collect personally identifiable information from children under 19 years of age in violation of applicable law. In the event the Service Provider discovers that a child has provided personal information, the Service Provider will immediately delete this from their servers. If you are a parent or guardian and you are aware that your child has provided the Service Provider with personal information, please contact the Service Provider (<strong>appscsadhana@gmail.com</strong>) so that they will be able to take the necessary actions.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Cookies</h2>
+      <p>
+        This website sets no advertising or tracking cookies. Our administrative dashboards, which
+        are not open to the public, use a sign-in session purely to keep a curator signed in.
+      </p>
 
       <h2 style={{ marginTop: 32, marginBottom: 16 }}>Security</h2>
-      <p>The Service Provider is concerned about safeguarding the confidentiality of your information. The Service Provider provides physical, electronic, and procedural safeguards to protect information the Service Provider processes and maintains.</p>
+      <p>
+        We protect your data with measures appropriate to its sensitivity, including authenticated
+        access to our records and restricted administrative accounts. No system is perfectly secure,
+        but because we never hold payment credentials, the most sensitive category of data is not
+        ours to lose.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Data Breach Notification</h2>
-      <p>If a data breach occurs that affects your personal data, the Service Provider will notify you in accordance with applicable legal requirements, including, where required, providing information about the nature of the breach and the steps being taken to address it.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Changes to this policy</h2>
+      <p>
+        We may update this policy. The effective date above shows when it last changed, and
+        meaningful changes will be announced in the group.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Changes</h2>
-      <p>The Service Provider may update this Privacy Policy from time to time. The Service Provider will notify you of material changes by posting the updated Privacy Policy with an effective date. Where required by law, the Service Provider will seek your consent to material changes before they take effect.</p>
-
-      <p>Previous versions of this Privacy Policy will be maintained and made available upon request by contacting the Service Provider at <strong>appscsadhana@gmail.com</strong>.</p>
-
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Your Consent</h2>
-      <p>Where processing is based on consent, you provide that consent by affirmatively opting in to the relevant feature or action. You may withdraw consent at any time without affecting processing carried out before withdrawal. Processing based on other lawful bases is carried out as described above.</p>
-
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Contact Us</h2>
-      <p>If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at <strong>appscsadhana@gmail.com</strong>.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Contact us</h2>
+      <ul style={{ paddingLeft: 24, marginBottom: 16 }}>
+        <li><strong>Email:</strong> {CONTACT.email}</li>
+        <li><strong>Phone:</strong> {CONTACT.phone}</li>
+        <li><strong>Address:</strong> {CONTACT.address}</li>
+      </ul>
     </div>
   );
 };

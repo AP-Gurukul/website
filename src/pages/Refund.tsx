@@ -1,34 +1,97 @@
 import React from 'react';
+import { CONTACT, BOT_HANDLE } from '../config';
+
+// The policy below is deliberately strict: all sales are final. What changed
+// from the earlier version is only what was factually wrong — it described
+// purchases made through the Apple App Store and Google Play, and told users to
+// cancel through their app-store account. Neither exists here. Passes are sold
+// through Telegram and charged by Razorpay, and a subscription is cancelled by
+// sending /cancel to the bot. A policy that points a paying student at the
+// wrong cancellation route is the kind of thing that becomes a chargeback.
 
 const Refund: React.FC = () => {
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '120px 20px 80px', lineHeight: 1.6, color: '#333' }}>
-      <h1 style={{ fontSize: 36, marginBottom: 8, letterSpacing: '-1px' }}>Refund & Cancellation Policy</h1>
-      <p style={{ color: '#666', marginBottom: 40 }}>Effective as of 2026-06-23</p>
+      <h1 style={{ fontSize: 36, marginBottom: 8, letterSpacing: '-1px' }}>Refund &amp; Cancellation Policy</h1>
+      <p style={{ color: '#666', marginBottom: 40 }}>Effective as of 2026-09-05</p>
 
-      <p>Thank you for choosing the Sadhana APPSC app, operated by Praneeth (the "Service Provider"). We strive to ensure our users have a rewarding experience while they are discovering, evaluating, and purchasing our educational content and subscriptions.</p>
+      <p>
+        Thank you for choosing Sadhana APPSC, operated by {CONTACT.name} (the &quot;Service Provider&quot;).
+        We sell access to a private Telegram study group. This policy explains what happens when you
+        want to cancel, and when a refund is and is not possible.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>1. No Refund Policy</h2>
-      <p>Given the digital nature of our educational content, study materials, and premium subscriptions, <strong>we do not offer any refunds or cancellations once a purchase is made.</strong></p>
-      
-      <p>All sales are strictly final. Once you have paid for a course, mock test, or premium subscription and gained access to the digital materials, the transaction cannot be reversed, and no amounts will be returned, regardless of whether you are satisfied with the course or not.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>1. What you are buying</h2>
+      <p>
+        A pass gives you access to our private Telegram group for a stated period. Access begins
+        immediately after a successful payment, when our bot sends you a single-use invite link.
+        Because access is granted at once and content is delivered continuously from that moment,
+        a pass is a digital service that is consumed as it runs.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>2. Subscription Cancellations</h2>
-      <p>If you are on a recurring subscription plan, you may cancel your auto-renewal at any time through your account settings or through the respective app store (Google Play Store or Apple App Store) where the subscription was initiated.</p>
-      
-      <p>Cancellation will stop any future billing, but <strong>no prorated refunds will be issued for the current or previous billing cycles</strong>. You will continue to have access to your premium features until the end of your current paid billing period.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>2. No refund policy</h2>
+      <p>
+        Given the digital nature of our educational content and the fact that access is delivered
+        immediately, <strong>we do not offer refunds once a purchase is made.</strong>
+      </p>
+      <p>
+        All sales are strictly final. Once you have paid for a pass and been sent your invite link,
+        the transaction cannot be reversed and no amounts will be returned, regardless of whether
+        you are satisfied with the content, and regardless of how much of the period you use.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>3. Exceptional Circumstances</h2>
-      <p>We do not grant exceptions to this no-refund policy, except in the rare case of technical errors on our end (such as duplicate billing for the same transaction). In such cases, please contact our support team immediately for resolution.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>3. Cancelling an auto-renewing pass</h2>
+      <p>
+        The <strong>Monthly Auto-Pay</strong> pass renews itself every 30 days until you cancel it.
+        You can cancel at any time by sending <strong>/cancel</strong> to our Telegram bot
+        at <strong>{BOT_HANDLE}</strong>.
+      </p>
+      <p>
+        Cancellation stops all future billing. <strong>No prorated refund is issued for the current
+        or any previous billing period</strong> — you keep access until the end of the period you
+        have already paid for, and are not charged again after that.
+      </p>
+      <p>
+        The two one-time passes (30-Day Sprint and Target APPSC 2026) do not renew, so there is
+        nothing to cancel. They simply end on their expiry date.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>4. Third-Party Purchases</h2>
-      <p>If you purchased your subscription through a third party (such as the Apple App Store or Google Play Store), the refund policy of that specific platform will apply. The Service Provider cannot directly process refunds for purchases made through Apple or Google's payment gateways. You will need to request the refund directly through your Apple ID or Google Play account.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>4. Exceptional circumstances</h2>
+      <p>
+        We do not grant exceptions to this no-refund policy, except where the fault is a technical
+        error on our side. That means:
+      </p>
+      <ul>
+        <li>You were billed more than once for the same pass.</li>
+        <li>You were charged after we confirmed your cancellation.</li>
+      </ul>
+      <p>
+        In those cases, contact us immediately and we will resolve it. Approved refunds are
+        submitted to Razorpay straight away and typically reach your account within 5–7 working
+        days, depending on your bank.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>5. Changes to this Policy</h2>
-      <p>The Service Provider reserves the right to modify this refund policy at any time. Any changes will be posted on this page. If you continue to use the Application after those changes are in effect, you agree to the revised policy.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>5. Payments</h2>
+      <p>
+        All payments are processed by <strong>Razorpay</strong>. We never see or store your card,
+        UPI or bank details. Prices shown are in Indian Rupees and are the total payable, with no
+        additional charges at checkout.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Contact Us</h2>
-      <p>If you have any questions or require assistance regarding our refund policy, please contact us at <strong>appscsadhana@gmail.com</strong>.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>6. Changes to this policy</h2>
+      <p>
+        The Service Provider reserves the right to modify this refund policy at any time. Any
+        changes will be posted on this page. If you continue to use the service after those changes
+        are in effect, you agree to the revised policy.
+      </p>
+
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Contact us</h2>
+      <p>If you have any questions or need assistance regarding this policy, please contact us:</p>
+      <ul>
+        <li><strong>Email:</strong> {CONTACT.email}</li>
+        <li><strong>Phone:</strong> {CONTACT.phone}</li>
+        <li><strong>Address:</strong> {CONTACT.address}</li>
+      </ul>
     </div>
   );
 };

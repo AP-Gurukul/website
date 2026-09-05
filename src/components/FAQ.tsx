@@ -4,24 +4,28 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqs = [
   {
-    question: "Which APPSC exams does the app cover?",
-    answer: "Sadhana APPSC is currently laser-focused on Group 1 and Group 2 exams. The syllabus, mock tests, and question banks are perfectly aligned with the latest APPSC notifications for these specific groups."
+    question: "Which APPSC exams does this cover?",
+    answer: "Group 1 and Group 2. Questions follow the syllabus for the latest APPSC notifications for those groups."
+  },
+  {
+    question: "How do I get access after paying?",
+    answer: "Send /start to our Telegram bot, pick a pass and pay through Razorpay. A single-use invite link to the private group reaches you on Telegram straight away. Telegram does not let a bot message you first, so you do need to message it once before it can send your link."
   },
   {
     question: "Is the content in Telugu or English?",
-    answer: "English currently. Full Telugu support is in active development and will be released in the next major update."
+    answer: "English currently. Telugu support is planned."
   },
   {
-    question: "How often are questions updated?",
-    answer: "New questions are added every week by our subject experts. After any official APPSC syllabus update, new relevant questions are added within 48 hours."
+    question: "How often are questions posted?",
+    answer: "Every day, to the private group. You can check how many days of access you have left at any time by sending /status to the bot."
   },
   {
-    question: "Can I use it offline?",
-    answer: "Yes. You can download question sets and practice completely offline. Your performance scores and analytics will sync automatically the next time you connect to the internet."
+    question: "Can I cancel the monthly pass?",
+    answer: "Yes. Send /cancel to the bot at any time. That stops all future billing, and you keep access until the end of the period you have already paid for."
   },
   {
     question: "Is there a refund policy?",
-    answer: "All sales are final. Since our content is digital, we do not offer refunds once a purchase is made. You can cancel auto-renewal of subscriptions at any time."
+    answer: "All sales are final. Since access is digital and delivered immediately, we do not offer refunds once a purchase is made. We do correct our own billing errors, such as a duplicate charge. See the Refund & Cancellation Policy for details."
   }
 ];
 

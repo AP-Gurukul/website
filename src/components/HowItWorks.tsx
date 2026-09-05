@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './HowItWorks.module.css';
 import { ArrowRight } from 'lucide-react';
+import { BOT_HANDLE } from '../config';
 
 const HowItWorks: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const HowItWorks: React.FC = () => {
         <div className="section-label">How it works</div>
         <h2>Simple by design.</h2>
         <p className="section-sub">
-          Four steps between you and your score improvement. No complex setup required.
+          Four steps between you and the group. No app to install, nothing to set up.
         </p>
       </div>
 
@@ -18,29 +19,29 @@ const HowItWorks: React.FC = () => {
         
         <div className={styles.card}>
           <div className={styles.num}>01</div>
-          <h3>Pick your exam</h3>
-          <p>Select APPSC Group 1 or Group 2. The entire syllabus maps automatically.</p>
+          <h3>Message the bot</h3>
+          <p>Send /start to {BOT_HANDLE} on Telegram and pick the pass that suits you.</p>
           <div className={styles.arrow}><ArrowRight size={14} /></div>
         </div>
 
         <div className={styles.card}>
           <div className={styles.num}>02</div>
-          <h3>Practice by topic</h3>
-          <p>Go deep into any chapter. Untimed mode first to build confidence, then timed.</p>
+          <h3>Pay securely</h3>
+          <p>The bot opens a Razorpay checkout. Pay by UPI, card or net banking.</p>
           <div className={styles.arrow}><ArrowRight size={14} /></div>
         </div>
 
         <div className={styles.card}>
           <div className={styles.num}>03</div>
-          <h3>Take mock tests</h3>
-          <p>Full-length mocks with actual exam conditions: question count, time limits, negative marking.</p>
+          <h3>Get your invite</h3>
+          <p>A single-use invite link to the private group reaches you on Telegram straight away.</p>
           <div className={styles.arrow}><ArrowRight size={14} /></div>
         </div>
 
         <div className={styles.card}>
           <div className={styles.num}>04</div>
-          <h3>Review & improve</h3>
-          <p>Weak areas auto-flagged after each test. Revisit until accuracy hits 90%+.</p>
+          <h3>Practise daily</h3>
+          <p>Questions are posted every day. Check your remaining days any time with /status.</p>
         </div>
 
       </div>

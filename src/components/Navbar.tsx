@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
+import { BOT_URL } from '../config';
 
 const Navbar: React.FC = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -46,8 +47,8 @@ const Navbar: React.FC = () => {
         <a href="#faq" onClick={(e) => handleSmoothScroll(e, 'faq')}>FAQ</a>
       </div>
 
-      <a href="#cta" className={styles.cta} onClick={(e) => handleSmoothScroll(e, 'cta')}>
-        Start Free
+      <a href={BOT_URL} target="_blank" rel="noopener noreferrer" className={styles.cta}>
+        Join on Telegram
       </a>
 
       <button 

@@ -1,67 +1,77 @@
 import React from 'react';
 import styles from './Features.module.css';
-import { Book, Clock, BarChart2, Lightbulb, CheckSquare, FileText } from 'lucide-react';
+import { Book, CalendarCheck, Lightbulb, Users, Bell, ShieldCheck } from 'lucide-react';
+
+// These describe what the Telegram group actually does today.
+//
+// The previous six cards advertised timed mock tests, performance analytics
+// with accuracy graphs, a syllabus tracker with completion percentages, and
+// previous-year papers by year. Those belonged to a mobile app that is no
+// longer being built. Selling a Telegram pass while advertising an analytics
+// dashboard is a promise nobody can keep, and it is the first thing a payment
+// reviewer compares against the product.
 
 const Features: React.FC = () => {
   return (
     <section className={`section-pad ${styles.features}`} id="features">
-      
+
       <div className={styles.head}>
-        <div className="section-label">Features</div>
+        <div className="section-label">What you get</div>
         <h2>Everything you need.<br/>Nothing you don't.</h2>
         <p className="section-sub">
-          A focused toolkit built around how APPSC Group 1 & 2 toppers actually prepare — not a generic study app.
+          A private group built around how APPSC Group 1 &amp; 2 aspirants actually revise —
+          consistent daily practice, not another dashboard to maintain.
         </p>
       </div>
 
       <div className={styles.grid}>
-        
+
         <div className={styles.card}>
           <div className={`${styles.icon} ${styles.green}`}>
-            <Book size={20} strokeWidth={2} />
+            <CalendarCheck size={20} strokeWidth={2} />
           </div>
-          <h3>Topic-wise question bank</h3>
-          <p>Drill into any topic with 100s of questions organized exactly as per Group 1 & 2 syllabus.</p>
+          <h3>A question every day</h3>
+          <p>New practice questions posted daily to the group, so revision becomes a habit rather than a weekend scramble.</p>
         </div>
 
         <div className={styles.card}>
           <div className={`${styles.icon} ${styles.amber}`}>
-            <Clock size={20} strokeWidth={2} />
-          </div>
-          <h3>Timed mock tests</h3>
-          <p>Simulate real exam pressure with full-length mocks. Auto-submit when time ends.</p>
-        </div>
-
-        <div className={styles.card}>
-          <div className={`${styles.icon} ${styles.blue}`}>
-            <BarChart2 size={20} strokeWidth={2} />
-          </div>
-          <h3>Performance analytics</h3>
-          <p>Know exactly where you're losing marks. Accuracy graphs, weak topic flags, score trends.</p>
-        </div>
-
-        <div className={styles.card}>
-          <div className={`${styles.icon} ${styles.green}`}>
             <Lightbulb size={20} strokeWidth={2} />
           </div>
           <h3>Detailed explanations</h3>
-          <p>Every question has a thorough explanation — not just the answer, but the reasoning.</p>
-        </div>
-
-        <div className={styles.card}>
-          <div className={`${styles.icon} ${styles.amber}`}>
-            <CheckSquare size={20} strokeWidth={2} />
-          </div>
-          <h3>Syllabus tracker</h3>
-          <p>Visually track your progress. Check off topics as you learn and instantly see your completion percentage.</p>
+          <p>Every question carries a thorough explanation — not just the answer, but the reasoning behind it.</p>
         </div>
 
         <div className={styles.card}>
           <div className={`${styles.icon} ${styles.blue}`}>
-            <FileText size={20} strokeWidth={2} />
+            <Book size={20} strokeWidth={2} />
           </div>
-          <h3>Previous year papers</h3>
-          <p>Practice directly from past APPSC Group 1 and 2 papers by year.</p>
+          <h3>Full syllabus coverage</h3>
+          <p>Questions span every Group 1 &amp; 2 subject, from AP History and Polity through to Science &amp; Technology.</p>
+        </div>
+
+        <div className={styles.card}>
+          <div className={`${styles.icon} ${styles.green}`}>
+            <Users size={20} strokeWidth={2} />
+          </div>
+          <h3>A focused group</h3>
+          <p>Members only, moderated, and free of the forwards and noise that make open study groups unusable.</p>
+        </div>
+
+        <div className={styles.card}>
+          <div className={`${styles.icon} ${styles.amber}`}>
+            <Bell size={20} strokeWidth={2} />
+          </div>
+          <h3>Expiry reminders</h3>
+          <p>We tell you before your pass ends, so access never lapses in the middle of your preparation.</p>
+        </div>
+
+        <div className={styles.card}>
+          <div className={`${styles.icon} ${styles.blue}`}>
+            <ShieldCheck size={20} strokeWidth={2} />
+          </div>
+          <h3>Secure payments</h3>
+          <p>Checkout is handled entirely by Razorpay. We never see or store your card, UPI or bank details.</p>
         </div>
 
       </div>
