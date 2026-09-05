@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
+import { CONTACT, BOT_URL } from '../config';
 
 const Footer: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const Footer: React.FC = () => {
             <span className={styles.logoText}>Sadhana APPSC</span>
           </div>
           <p className={styles.tagline}>
-            The ultra-premium preparation app for APPSC Group 1 and 2 aspirants.
+            Daily APPSC Group 1 &amp; 2 practice questions, delivered to a private Telegram group.
           </p>
         </div>
 
@@ -29,8 +30,9 @@ const Footer: React.FC = () => {
         <div className={styles.links}>
           <h4>Support</h4>
           <ul>
-            <li><a href="mailto:appscsadhana@gmail.com">Contact Us</a></li>
-            <li><a href="mailto:appscsadhana@gmail.com">Help Center</a></li>
+            <li><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
+            <li><a href={`tel:${CONTACT.phone.replace(/\s+/g, '')}`}>{CONTACT.phone}</a></li>
+            <li><a href={BOT_URL} target="_blank" rel="noopener noreferrer">Telegram bot</a></li>
           </ul>
         </div>
 
@@ -46,6 +48,7 @@ const Footer: React.FC = () => {
       </div>
       
       <div className={styles.bottom}>
+        <p>{CONTACT.address}</p>
         <p>Copyright &copy; {new Date().getFullYear()} sadhanaappsc.in - All Rights Reserved.</p>
       </div>
     </footer>

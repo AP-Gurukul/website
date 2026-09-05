@@ -185,3 +185,19 @@
     transform: translateY(-4px);
   }
 }
+
+/* Payment-processor and refund note under the plan grid. Razorpay expects the
+   pricing page to say plainly what is charged and where the refund terms are. */
+.footnote {
+  max-width: 620px;
+  margin: 32px auto 0;
+  text-align: center;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  opacity: 0.65;
+}
+
+.footnote a {
+  color: inherit;
+  text-decoration: underline;
+}

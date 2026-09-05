@@ -1,138 +1,174 @@
 import React from 'react';
+import { CONTACT, BOT_HANDLE } from '../config';
+
+// Rewritten to describe the service that actually exists: a private Telegram
+// study group sold through a bot and charged by Razorpay.
+//
+// The previous version was a generic mobile-app template. It licensed you to
+// "install the Application on a mobile device", listed AdMob and Firebase
+// Crashlytics as third-party services, advised against jailbreaking your phone,
+// disclaimed responsibility for roaming charges and a flat battery, and carried
+// EU Digital Services Act provisions. None of that describes this business, and
+// terms that describe a different product are worth little when they are needed.
+//
+// The legal scaffolding worth keeping — limitation of liability, indemnity,
+// severability, entire agreement — is kept and pointed at the real service.
 
 const Terms: React.FC = () => {
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '120px 20px 80px', lineHeight: 1.6, color: '#333' }}>
-      <h1 style={{ fontSize: 36, marginBottom: 8, letterSpacing: '-1px' }}>Terms & Conditions</h1>
-      <p style={{ color: '#666', marginBottom: 40 }}>Effective as of 2026-06-23</p>
+      <h1 style={{ fontSize: 36, marginBottom: 8, letterSpacing: '-1px' }}>Terms &amp; Conditions</h1>
+      <p style={{ color: '#666', marginBottom: 40 }}>Effective as of 2026-09-05</p>
 
-      <p>These terms and conditions apply to the Sadhana APPSC app for mobile devices and web browsers, together with any related services operated by Praneeth (collectively, the "Application"). Praneeth is hereby referred to as the "Service Provider".</p>
+      <p>
+        These terms apply to the Sadhana APPSC website and to the private Telegram study group
+        operated by {CONTACT.name} (the &quot;Service Provider&quot;, &quot;we&quot;), together the
+        &quot;Service&quot;. By buying a pass or joining the group, you agree to these terms. Please
+        read them before you buy.
+      </p>
 
-      <p>By downloading or using the Application, you agree to these Terms and Conditions. You should read them carefully before using the Application.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>What we provide</h2>
+      <p>
+        We post curated practice questions for the APPSC Group 1 and Group 2 examinations, with
+        answers and explanations, to a private Telegram group. A paid pass gives one person access
+        to that group for the period stated at the time of purchase.
+      </p>
+      <p>
+        We are an independent private service. We are not affiliated with, endorsed by, or connected
+        to the Andhra Pradesh Public Service Commission or any government body.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>License to use the Application</h2>
-      <p>Subject to your compliance with these Terms, the Service Provider grants you a limited, non-exclusive, non-transferable, revocable license to install and use the Application on a mobile device or computer for personal or internal business purposes. You may not reproduce, distribute, modify, create derivative works from, reverse engineer, decompile, or disassemble the Application, except as and only to the extent that such activity is expressly permitted by applicable law.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Eligibility</h2>
+      <p>
+        You must be at least 18 years old, or have a parent or legal guardian accept these terms on
+        your behalf. You must be legally permitted to use the Service in your jurisdiction, and you
+        need a Telegram account to receive access.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Intellectual Property</h2>
-      <p>The Service Provider retains all intellectual property rights in the Application, including its code, design, trademarks, service marks, trade names, logos, and branding (the "IP"). Nothing in these Terms grants you any license or right to use the Service Provider's trademarks, logos, or branding for any purpose. You agree not to remove, alter, or obscure any copyright, trademark, or other proprietary notices displayed in or on the Application.</p>
-
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Termination</h2>
-      <p>The Service Provider may suspend your access to the Application or services if you materially breach these Terms. The Service Provider will provide you with written notice of the breach and, where the breach is capable of cure, you will have 14 days from receipt of notice to remedy the breach. If you fail to cure the breach within that period, the Service Provider may terminate your access.</p>
-      
-      <p>The Service Provider may suspend or terminate your access immediately without notice if you violate applicable law, infringe intellectual property rights, or engage in activity that could cause harm to other users or the Service Provider.</p>
-      
-      <p>Upon termination, your right to use the Application will end and you must delete all copies from your devices.</p>
-
-      <p>By accessing and using this Application, you represent that you are legally permitted to use it in your jurisdiction. You must be at least 19 years of age (the age of digital consent in your jurisdiction) to use the Application. If you are below 19, a parent or legal guardian must review and accept these Terms on your behalf.</p>
-
-      <p>Unauthorized copying, modification of the Application, any part of the Application, or the Service Provider's trademarks is strictly prohibited. Any attempts to extract the source code of the Application, translate the Application into other languages, or create derivative versions are not permitted. All trademarks, copyrights, database rights, and other intellectual property rights related to the Application remain the property of the Service Provider.</p>
-
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>User-Generated Content and Acceptable Use</h2>
-      <p>If this Application allows users to post, share, or upload content, you agree not to post content that:</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Your access</h2>
       <ul style={{ paddingLeft: 24, marginBottom: 16 }}>
-        <li>Is illegal or violates third-party intellectual property rights (copyright, trademark, patents)</li>
-        <li>Is abusive, threatening, harassing, defamatory, or hate speech</li>
-        <li>Contains discrimination or incitement to violence or illegal activity</li>
-        <li>Is spam, phishing, or contains malware</li>
-        <li>Violates the privacy or personal data rights of others</li>
-        <li>Is misleading, false, or deceptive</li>
-        <li>Contains explicit violence or sexual content (unless age-gated appropriately)</li>
+        <li>A pass is for <strong>one person</strong>. Invite links are single-use and tied to your purchase.</li>
+        <li>Do not share, forward or resell your invite link. A shared link gives away your own seat rather than creating a second one.</li>
+        <li>You must message our bot at least once so it can send you your link. Telegram does not permit a bot to message you first.</li>
+        <li>Access is tied to your Telegram account. Keep it, or contact us before changing it.</li>
       </ul>
 
-      <p>The Service Provider reserves the right to:</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Payments</h2>
       <ul style={{ paddingLeft: 24, marginBottom: 16 }}>
-        <li>Remove or disable access to content that violates these guidelines</li>
-        <li>Suspend or terminate accounts of users who repeatedly violate these guidelines</li>
-        <li>Cooperate with law enforcement if illegal content is reported</li>
-        <li>Moderate, filter, or hide content that violates these Terms, applicable law, or the guidelines set out above</li>
+        <li>All payments are processed by <strong>Razorpay</strong>. We never see or store your card, UPI or bank details.</li>
+        <li>Prices are shown in Indian Rupees and are the total payable. There are no additional charges at checkout.</li>
+        <li>The Monthly Auto-Pay pass renews automatically every 30 days until cancelled. Cancel at any time by sending <strong>/cancel</strong> to <strong>{BOT_HANDLE}</strong>.</li>
+        <li>Renewing early never costs you days: a new period is added to the end of your current one, not from the date you paid.</li>
+        <li>We may change prices for future purchases. A change never affects a pass you have already bought.</li>
+        <li><strong>All sales are final.</strong> See our <a href="/refund">Refund &amp; Cancellation Policy</a>.</li>
       </ul>
 
-      <p>Content submitted through the Application may be visible to other users or to the public, depending on how the Application functions.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Content and intellectual property</h2>
+      <p>
+        The questions, explanations and material we post are our own work or are used with
+        permission, and are provided for your personal study only. We retain all intellectual
+        property rights in them, and in our name, logo and branding.
+      </p>
+      <p>
+        You may not copy, screenshot for distribution, republish, sell, or otherwise share our
+        material outside the group — including in other study groups, channels, or applications.
+        Doing so ends your access without a refund.
+      </p>
 
-      <p>If you believe content violates these Terms, infringes your rights, or is unlawful, you may report it to the Service Provider at <strong>appscsadhana@gmail.com</strong>. The report should include enough information for the Service Provider to identify the content, evaluate the complaint, and contact you if follow-up is required.</p>
-
-      <p>Where the Application provides such features, you may also report content, block other users, or mute notifications directly through the Application's interface. The Service Provider will review in-app reports with the same standards described in these Terms.</p>
-
-      <p>The Service Provider may review reported content, request additional information where necessary, remove or restrict access to content, and take action against the responsible account where appropriate. Users affected by moderation decisions may contact the Service Provider at <strong>appscsadhana@gmail.com</strong> to request further review. The Service Provider will respond to appeals within a reasonable period and provide the reasons for any upheld moderation decision, subject to applicable law.</p>
-
-      <p>By submitting User-Generated Content you grant the Service Provider a non-exclusive, worldwide, royalty-free license to use, reproduce, distribute, prepare derivative works of, display and perform the content in connection with the Application and the Service Provider's business. This license does not grant the Service Provider the right to sell or sublicense your content to third parties independently of the Application. You represent and warrant that you own or control all rights in the content you post and that use of the content does not violate these Terms or applicable law.</p>
-
-      <p>Your content may include personal data. Processing of personal data related to User-Generated Content is governed by the Privacy Policy. Do not post personal data of others without their consent.</p>
-
-      <p>The Service Provider is dedicated to ensuring that the Application is as beneficial and efficient as possible. As such, they reserve the right to modify the Application or charge for their services at any time and for any reason. The Service Provider assures you that any charges for the Application or its services will be clearly communicated to you.</p>
-
-      <p>The Application stores and processes personal data that you have provided to the Service Provider in order to provide the Service. It is your responsibility to maintain the security of your phone and access to the Application. The Service Provider strongly advises against jailbreaking or rooting your phone, which involves removing software restrictions and limitations imposed by the official operating system of your device. Such actions could expose your phone to malware, viruses, malicious programs, compromise your phone's security features, and may result in the Application not functioning correctly or at all.</p>
-
-      <p>Please note that the Application utilizes third-party services that have their own Terms and Conditions. Below are the links to the Terms and Conditions of the third-party service providers used by the Application:</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Conduct in the group</h2>
+      <p>We may remove you from the group, without a refund, for:</p>
       <ul style={{ paddingLeft: 24, marginBottom: 16 }}>
-        <li>Google Play Services</li>
-        <li>AdMob</li>
-        <li>Google Analytics for Firebase</li>
-        <li>Firebase Crashlytics</li>
+        <li>Sharing your invite link or your access with anyone else.</li>
+        <li>Redistributing our content outside the group.</li>
+        <li>Spam, advertising, or promoting other services.</li>
+        <li>Harassment, abuse, hate speech, or threats directed at any member.</li>
+        <li>Posting illegal content, or content that infringes someone else&apos;s rights.</li>
+        <li>Attempting to disrupt, attack, or gain unauthorised access to our systems.</li>
       </ul>
+      <p>
+        Anything you post in the group is visible to other members. Do not post other people&apos;s
+        personal information. If you believe another member has posted something that breaches these
+        terms, report it to us at <strong>{CONTACT.email}</strong> with enough detail for us to
+        identify it. Where a removal decision affects you, you may write to the same address and we
+        will review it and explain the outcome.
+      </p>
 
-      <p>Please be aware that the Service Provider does not assume responsibility for certain aspects. Some functions of the Application require an active internet connection, which can be Wi-Fi or provided by your mobile network provider. The Service Provider cannot be held responsible if the Application does not function at full capacity due to lack of access to Wi-Fi or if you have exhausted your data allowance.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Availability</h2>
+      <p>
+        We aim to post daily, but we do not guarantee uninterrupted service. The group depends on
+        Telegram and payments depend on Razorpay; outages in either are outside our control. We may
+        modify or discontinue the Service. If we stop it permanently, we will refund the unused
+        portion of any pass still running.
+      </p>
 
-      <p>If you are using the application outside of a Wi-Fi area, please be aware that your mobile network provider's agreement terms still apply. Consequently, you may incur charges from your mobile provider for data usage during the connection to the application, or other third-party charges. By using the application, you accept responsibility for any such charges, including roaming data charges if you use the application outside of your home territory (i.e., region or country) without disabling data roaming. If you are not the bill payer for the device on which you are using the application, they assume that you have obtained permission from the bill payer.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>No guarantee of results</h2>
+      <p>
+        We provide practice material. We do not guarantee any examination result, rank, score, or
+        selection. Your outcome depends on your own preparation.
+      </p>
 
-      <p>Similarly, the Service Provider cannot always assume responsibility for your usage of the application. For instance, it is your responsibility to ensure that your device remains charged. If your device runs out of battery and you are unable to access the Service, the Service Provider cannot be held responsible.</p>
-
-      <p>Nothing in these Terms shall limit any rights you have under applicable consumer protection laws that cannot be lawfully excluded.</p>
-
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Limitation of Liability</h2>
-      <p>To the fullest extent permitted by law, the Service Provider shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to lost profits, data loss, or business interruption, even if advised of the possibility of such damages.</p>
-
-      <p>However, the Service Provider retains full liability for:</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Limitation of liability</h2>
+      <p>
+        To the fullest extent permitted by law, we are not liable for any indirect, incidental,
+        special, consequential or punitive damages, including lost profits or data loss, even if
+        advised of the possibility.
+      </p>
+      <p>We retain full liability for:</p>
       <ul style={{ paddingLeft: 24, marginBottom: 16 }}>
         <li>Death or personal injury caused by negligence</li>
         <li>Fraud or fraudulent misrepresentation</li>
-        <li>Any other liability that cannot be excluded or limited under applicable law</li>
+        <li>Any other liability that cannot lawfully be excluded or limited</li>
       </ul>
-
-      <p>To the fullest extent permitted by law, the total liability of the Service Provider for any claim shall not exceed the amount paid by you to the Service Provider for the Application in the 12 months preceding the claim, or the minimum amount that must be paid under applicable law, whichever is greater. If the Application is provided free of charge, this means the Service Provider's liability is limited to the minimum amount permitted by applicable law.</p>
-
-      <p>The Service Provider accepts no liability for any loss, direct or indirect, that you experience as a result of relying entirely on third-party information provided through this Application, or for inaccuracies in content provided by third parties.</p>
+      <p>
+        To the fullest extent permitted by law, our total liability for any claim will not exceed the
+        amount you paid us in the 12 months before the claim, or the minimum required by applicable
+        law, whichever is greater. Nothing in these terms limits any rights you have under consumer
+        protection laws that cannot lawfully be excluded.
+      </p>
 
       <h2 style={{ marginTop: 32, marginBottom: 16 }}>Indemnification</h2>
-      <p>To the fullest extent permitted by law, you agree to indemnify and hold harmless the Service Provider, its affiliates, officers, directors, employees and agents from and against any claims, liabilities, damages, losses and expenses, including reasonable legal fees, arising out of or directly related to your breach of these Terms or your intentional misuse of the Application, including User-Generated Content you submit in violation of these Terms.</p>
+      <p>
+        To the fullest extent permitted by law, you agree to indemnify and hold us harmless from
+        claims, liabilities, damages, losses and expenses, including reasonable legal fees, arising
+        from your breach of these terms or your intentional misuse of the Service, including content
+        you post in breach of these terms. This does not apply to claims arising from our own
+        negligence, our breach of these terms, or our violation of applicable law.
+      </p>
 
-      <p>This indemnification does not apply to claims arising from the Service Provider's own negligence, breach of these Terms, or violation of applicable law. In jurisdictions where consumer indemnification is restricted by law, this clause shall be limited to the maximum extent permitted.</p>
-
-      <p>The Service Provider may wish to update the application at some point. The application is currently available as per the requirements for the operating system (and for any additional systems they decide to extend the availability of the application to) may change, and you will need to download the updates if you want to continue using the application. The Service Provider does not guarantee that it will always update the application so that it is relevant to you and/or compatible with the particular operating system version installed on your device. You should accept updates when offered; if you choose not to, the Service Provider may cease to support earlier versions and the Application may not function properly. The Service Provider may also wish to cease providing the application and may terminate its use at any time without providing termination notice to you. Unless they inform you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must cease using the application, and (if necessary) delete it from your device.</p>
-
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Governing Law and Jurisdiction</h2>
-      <p>These Terms and Conditions are governed by the laws of the jurisdiction in which the Service Provider is established, excluding conflict of law rules, except to the extent mandatory consumer protection laws provide otherwise.</p>
-
-      <p>Any dispute arising out of or relating to these Terms will be brought before the courts that have jurisdiction under applicable law. Nothing in this clause limits any rights you may have to bring a claim in a court that is competent under mandatory law.</p>
-
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>DSA Compliance (Digital Services Act)</h2>
-      <p>If the Application is an intermediary service as defined under the Digital Services Act (Regulation (EU) 2022/2065, "DSA"), the following provisions apply in addition to the terms above.</p>
-
-      <p><strong>Point of Contact:</strong> The Service Provider maintains a single point of contact for direct communication with EU authorities and recipients of the service, reachable at <strong>appscsadhana@gmail.com</strong>. Where the Service Provider is established outside the European Union, a legal representative in the EU has been designated in accordance with Article 13 of the DSA.</p>
-
-      <p><strong>Content Moderation and Statement of Reasons:</strong> When the Service Provider restricts access to content, suspends or terminates an account, or otherwise limits the availability of the Application's features, a clear and specific statement of reasons will be provided to the affected user. The statement will include the nature of the restriction, the legal or contractual basis for the decision, and information on available redress mechanisms, in accordance with Article 17 of the DSA.</p>
-
-      <p><strong>Notice and Action:</strong> Users and third parties may submit notices of allegedly illegal content through the contact details provided in these Terms. The Service Provider will process notices promptly, diligently, and without automated decision-making where the circumstances require human review. Notices will be acknowledged electronically and a decision communicated without undue delay, in accordance with Article 16 of the DSA.</p>
-
-      <p><strong>Out-of-Court Dispute Settlement:</strong> Disputes regarding content moderation decisions, including decisions to restrict content or suspend accounts, may be submitted to an out-of-court dispute settlement body certified in accordance with Article 21 of the DSA. The Service Provider will engage with such bodies in good faith. Use of out-of-court dispute settlement does not affect your right to seek judicial remedy under applicable law.</p>
-
-      <p><strong>Transparency Reporting:</strong> The Service Provider publishes periodic transparency reports covering content moderation activities, including the volume of notices received, actions taken, and automated means used, in accordance with Article 24 of the DSA. Reports are made available upon request at <strong>appscsadhana@gmail.com</strong>.</p>
-
-      <p>These DSA provisions apply to the extent that the Application qualifies as an intermediary service under the DSA and does not replace or limit any rights or obligations under applicable consumer protection or data protection law.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Governing law and jurisdiction</h2>
+      <p>
+        These terms are governed by the laws of India. The courts of Andhra Pradesh have exclusive
+        jurisdiction over any dispute arising from them, except where mandatory consumer protection
+        law gives you the right to bring a claim elsewhere.
+      </p>
 
       <h2 style={{ marginTop: 32, marginBottom: 16 }}>Severability</h2>
-      <p>If any provision of these Terms and Conditions is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, such provision shall be modified to the minimum extent necessary to make it valid and enforceable, and the remaining provisions of these Terms shall remain in full force and effect.</p>
+      <p>
+        If any provision of these terms is held invalid, illegal or unenforceable, it will be
+        modified to the minimum extent necessary to make it enforceable, and the remaining
+        provisions will remain in full force.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Entire Agreement</h2>
-      <p>These Terms and Conditions, together with the Privacy Policy, constitute the entire agreement between you and the Service Provider concerning your use of the Application, superseding any prior agreements or understandings.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Entire agreement</h2>
+      <p>
+        These terms, together with the <a href="/privacy">Privacy Policy</a> and the{' '}
+        <a href="/refund">Refund &amp; Cancellation Policy</a>, are the entire agreement between you
+        and us regarding the Service, superseding any prior understanding.
+      </p>
 
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Changes to These Terms and Conditions</h2>
-      <p>The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Changes to these terms</h2>
+      <p>
+        We may update these terms. The effective date above shows when they last changed, and
+        meaningful changes will be announced in the group. Continuing to use the Service after a
+        change means you accept it. Previous versions are available on request.
+      </p>
 
-      <p>Previous versions of these Terms and Conditions will be maintained and made available upon request by contacting the Service Provider at <strong>appscsadhana@gmail.com</strong>.</p>
-
-      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Contact Us</h2>
-      <p>If you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at <strong>appscsadhana@gmail.com</strong>.</p>
+      <h2 style={{ marginTop: 32, marginBottom: 16 }}>Contact us</h2>
+      <ul style={{ paddingLeft: 24, marginBottom: 16 }}>
+        <li><strong>Email:</strong> {CONTACT.email}</li>
+        <li><strong>Phone:</strong> {CONTACT.phone}</li>
+        <li><strong>Address:</strong> {CONTACT.address}</li>
+      </ul>
     </div>
   );
 };

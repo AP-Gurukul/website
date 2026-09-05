@@ -383,7 +383,7 @@ const AppShowcase: React.FC = () => {
   return (
     <section className={styles.showcase} id="app-showcase">
       <div className={styles.head}>
-        <div className="section-label">Inside the App</div>
+        <div className="section-label">Inside the group</div>
         <h2>Designed to give you<br/>the winning edge.</h2>
         <p className={styles.sub}>
           Experience a world-class interface that makes tracking your progress, finding your weak points, and improving your score effortless.

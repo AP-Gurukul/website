@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Hero.module.css';
 import { ArrowRight } from 'lucide-react';
+import { BOT_URL } from '../config';
 
 const Hero: React.FC = () => {
   return (
@@ -19,12 +20,17 @@ const Hero: React.FC = () => {
         </h1>
 
         <p className={`${styles.sub} animate-fade-in-up`} style={{ animationDelay: '0.3s' }}>
-          Thousands of curated questions, detailed explanations, and smart mock tests — all in one ultra-premium, distraction-free app built exclusively for Andhra Pradesh Group 1 & 2 success.
+          Curated questions with detailed explanations, posted every day to a private Telegram group built exclusively for Andhra Pradesh Group 1 &amp; 2 aspirants. Buy a pass, get added automatically.
         </p>
 
         <div className={`${styles.ctas} animate-fade-in-up`} style={{ animationDelay: '0.4s' }}>
-          <a href="#cta" className={styles.btnPrimary}>
-            Download the App <ArrowRight size={16} />
+          <a
+            href={BOT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.btnPrimary}
+          >
+            Join on Telegram <ArrowRight size={16} />
           </a>
           <a href="#how-it-works" className={styles.btnGhost}>
             See how it works

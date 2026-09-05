@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './CTA.module.css';
-import { Download } from 'lucide-react';
+import { Send } from 'lucide-react';
+import { BOT_URL, BOT_HANDLE } from '../config';
 
 const CTA: React.FC = () => {
   return (
@@ -10,15 +11,21 @@ const CTA: React.FC = () => {
           <h2>Start preparing<br/>the smart way.</h2>
           
           <p className={styles.sub}>
-            Join 8,200+ APPSC Group 1 & 2 aspirants already using Sadhana APPSC to sharpen their scores every day.
+            Pick a pass in the Telegram bot, pay securely with Razorpay, and you are added to the
+            private group straight away.
           </p>
 
           <div className={styles.btns}>
-            <a href="#waitlist" className={styles.btnPrimaryLight}>
-              <Download size={16} /> Download for Android
+            <a
+              href={BOT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnPrimaryLight}
+            >
+              <Send size={16} /> Open {BOT_HANDLE}
             </a>
-            <a href="#waitlist" className={styles.btnGhostDark}>
-              iOS (Coming soon)
+            <a href="#pricing" className={styles.btnGhostDark}>
+              See the passes
             </a>
           </div>
         </div>
