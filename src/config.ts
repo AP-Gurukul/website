@@ -20,7 +20,7 @@ export const CONTACT = {
   email: 'appscsadhana@gmail.com',
   phone: '+91 95335 88804',
   // Razorpay expects a real operating address, not a placeholder.
-  address: 'REPLACE ME — street, city, state, PIN'
+  address: 'Labbipet, Vijayawada, Andhra Pradesh'
 };
 
 export interface Plan {
